@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="contemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#74b9ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0984e3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00cec9;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="modernLight" cx="60%" cy="25%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#contemGrad)"/>
+  
+  <!-- Modern lighting -->
+  <ellipse cx="360" cy="100" rx="180" ry="120" fill="url(#modernLight)"/>
+  
+  <!-- Modern stage setup -->
+  <rect x="150" y="300" width="300" height="30" rx="15" fill="#2d3436" opacity="0.7"/>
+  
+  <!-- Sound equipment -->
+  <rect x="100" y="250" width="40" height="50" rx="5" fill="#2d3436" opacity="0.8"/>
+  <rect x="460" y="260" width="35" height="40" rx="5" fill="#2d3436" opacity="0.8"/>
+  
+  <!-- Microphone stand -->
+  <rect x="295" y="200" width="10" height="100" fill="#636e72" opacity="0.9"/>
+  <ellipse cx="300" cy="190" rx="15" ry="20" fill="#2d3436" opacity="0.9"/>
+  
+  <!-- Performer -->
+  <ellipse cx="350" cy="250" rx="30" ry="50" fill="#2d3436" opacity="0.8"/>
+  <ellipse cx="350" cy="220" rx="20" ry="15" fill="#2d3436" opacity="0.8"/>
+  
+  <!-- Modern sound waves -->
+  <g stroke="#ffffff" stroke-width="2" fill="none" opacity="0.5">
+    <path d="M 300 150 L 350 130 L 400 150 L 450 130"/>
+    <path d="M 250 180 L 300 160 L 350 180 L 400 160 L 450 180"/>
+    <path d="M 200 210 L 250 190 L 300 210 L 350 190 L 400 210"/>
+  </g>
+  
+  <!-- Contemporary musical notes -->
+  <g fill="#ffffff" opacity="0.5">
+    <text x="200" y="120" font-family="serif" font-size="22">♪</text>
+    <text x="450" y="150" font-family="serif" font-size="20">♫</text>
+    <text x="150" y="180" font-family="serif" font-size="18">♪</text>
+    <text x="500" y="200" font-family="serif" font-size="24">♪</text>
+  </g>
+  
+  <!-- Modern geometric elements -->
+  <polygon points="50,80 80,50 110,80 80,110" fill="#ffffff" opacity="0.2"/>
+  <polygon points="520,300 540,280 560,300 540,320" fill="#ffffff" opacity="0.2"/>
+  
+  <!-- Text -->
+  <text x="300" y="370" font-family="serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#ffffff">Contemporary Concert</text>
+</svg>
