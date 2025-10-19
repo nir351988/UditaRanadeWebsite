@@ -1,0 +1,309 @@
+---
+layout: default
+---
+
+<!-- Hero Section with Classical Theme -->
+<section class="hero classical-hero">
+    <div class="hero-content">
+        <div class="hero-bg-elements">
+            <div class="raga-waves"></div>
+            <div class="taal-circles"></div>
+            <div class="musical-aura"></div>
+        </div>
+        
+        <div class="hero-main">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">{{ site.author.name }}</span>
+                    <span class="title-subtitle">भारतीय शास्त्रीय संगीत की साधिका</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Experience the divine journey through ragas, talas, and the eternal tradition of 
+                    Bharatiya Shastriya Sangeet. Where ancient wisdom meets contemporary expression.
+                </p>
+                
+                <div class="hero-specializations">
+                    <span class="specialization">{{ site.music.gharana }}</span>
+                    <span class="specialization">Classical Vocalist</span>
+                    <span class="specialization">Raga Specialist</span>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="{{ site.baseurl }}/concerts/" class="btn btn-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Upcoming Concerts
+                    </a>
+                    <a href="{{ site.baseurl }}/performances/" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Listen to Performances
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="{{ site.baseurl }}/assets/images/udita-hero.svg" alt="{{ site.author.name }} - Classical Indian Music Vocalist" loading="eager">
+                    <div class="image-decorations">
+                        <div class="musical-ornament top-left">❦</div>
+                        <div class="musical-ornament top-right">♪</div>
+                        <div class="musical-ornament bottom-left">♫</div>
+                        <div class="musical-ornament bottom-right">❦</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Raga of the Month -->
+<section class="raga-spotlight">
+    <div class="container">
+        <div class="section-header">
+            <h2><i class="fas fa-star"></i> Raga of the Month</h2>
+            <p>Discover the beauty and intricacies of selected ragas</p>
+        </div>
+        
+        <div class="raga-card featured">
+            <div class="raga-info">
+                <h3>राग यमन</h3>
+                <div class="raga-details">
+                    <span class="detail"><strong>Thaat:</strong> कल्याण</span>
+                    <span class="detail"><strong>Time:</strong> Evening (6-9 PM)</span>
+                    <span class="detail"><strong>Season:</strong> All seasons</span>
+                    <span class="detail"><strong>Mood:</strong> Devotional, Serene</span>
+                </div>
+                <p class="raga-description">
+                    Raga Yaman is one of the most fundamental ragas in Hindustani classical music. 
+                    Known for its serene and devotional character, it creates an atmosphere of peace and spiritual elevation.
+                </p>
+                <a href="{{ site.baseurl }}/ragas/yaman/" class="btn btn-outline">Explore Raga Yaman</a>
+            </div>
+            <div class="raga-notation">
+                <div class="swar-sequence">
+                    <span class="swar">सा</span>
+                    <span class="swar">रे</span>
+                    <span class="swar">ग</span>
+                    <span class="swar">म॑</span>
+                    <span class="swar">प</span>
+                    <span class="swar">ध</span>
+                    <span class="swar">नि</span>
+                    <span class="swar">सां</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Performances -->
+<section class="recent-performances">
+    <div class="container">
+        <div class="section-header">
+            <h2><i class="fas fa-music"></i> Recent Performances</h2>
+            <p>Highlights from recent concerts and recordings</p>
+        </div>
+        
+        <div class="performances-grid">
+            <div class="performance-card">
+                <div class="performance-image">
+                    <img src="{{ site.baseurl }}/assets/images/news/featured-performance.svg" alt="Recent Performance">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="performance-info">
+                    <h3>Classical Evening at Sangeet Sabha</h3>
+                    <p class="performance-details">
+                        <span class="venue"><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+                        <span class="date"><i class="fas fa-calendar"></i> Oct 15, 2025</span>
+                    </p>
+                    <p class="performance-description">
+                        An enchanting evening featuring Raga Bhairav and Raga Darbari, 
+                        showcasing the depth of Gwalior Gharana tradition.
+                    </p>
+                    <div class="ragas-performed">
+                        <span class="raga-tag">Raga Bhairav</span>
+                        <span class="raga-tag">Raga Darbari</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-card">
+                <div class="performance-image">
+                    <img src="{{ site.baseurl }}/assets/images/news/recording-session.svg" alt="Recording Session">
+                    <div class="play-overlay">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                </div>
+                <div class="performance-info">
+                    <h3>Studio Recording - Devotional Album</h3>
+                    <p class="performance-details">
+                        <span class="venue"><i class="fas fa-microphone"></i> Studio Session</span>
+                        <span class="date"><i class="fas fa-calendar"></i> Oct 10, 2025</span>
+                    </p>
+                    <p class="performance-description">
+                        Recording sessions for upcoming devotional album featuring classical 
+                        compositions in praise of Saraswati Mata.
+                    </p>
+                    <div class="ragas-performed">
+                        <span class="raga-tag">Raga Saraswati</span>
+                        <span class="raga-tag">Raga Bageshri</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="performance-card">
+                <div class="performance-image">
+                    <img src="{{ site.baseurl }}/assets/images/news/music-workshop.svg" alt="Music Workshop">
+                    <div class="play-overlay">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                <div class="performance-info">
+                    <h3>Classical Music Workshop</h3>
+                    <p class="performance-details">
+                        <span class="venue"><i class="fas fa-university"></i> Music Academy</span>
+                        <span class="date"><i class="fas fa-calendar"></i> Oct 5, 2025</span>
+                    </p>
+                    <p class="performance-description">
+                        Teaching session on fundamentals of raga elaboration and 
+                        traditional composition structures in classical music.
+                    </p>
+                    <div class="ragas-performed">
+                        <span class="raga-tag">Raga Theory</span>
+                        <span class="raga-tag">Taal System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-footer">
+            <a href="{{ site.baseurl }}/performances/" class="btn btn-primary">View All Performances</a>
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Concerts -->
+<section class="upcoming-concerts">
+    <div class="container">
+        <div class="section-header">
+            <h2><i class="fas fa-calendar-alt"></i> Upcoming Concerts</h2>
+            <p>Join us for upcoming classical music events</p>
+        </div>
+        
+        <div class="concerts-timeline">
+            <div class="concert-item">
+                <div class="concert-date">
+                    <span class="month">Nov</span>
+                    <span class="day">15</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="concert-info">
+                    <h3>Raag Malhar Concert</h3>
+                    <p class="venue"><i class="fas fa-map-marker-alt"></i> Tata Theatre, Mumbai</p>
+                    <p class="description">Monsoon ragas celebration featuring Raag Miyan Malhar and Raag Gaud Malhar</p>
+                    <div class="concert-details">
+                        <span class="time"><i class="fas fa-clock"></i> 7:00 PM</span>
+                        <span class="price"><i class="fas fa-ticket-alt"></i> ₹500 - ₹2000</span>
+                    </div>
+                    <a href="{{ site.baseurl }}/concerts/raag-malhar-2025/" class="btn btn-small">Book Tickets</a>
+                </div>
+            </div>
+            
+            <div class="concert-item">
+                <div class="concert-date">
+                    <span class="month">Dec</span>
+                    <span class="day">10</span>
+                    <span class="year">2025</span>
+                </div>
+                <div class="concert-info">
+                    <h3>Classical Fusion Evening</h3>
+                    <p class="venue"><i class="fas fa-map-marker-alt"></i> Nehru Centre, Worli</p>
+                    <p class="description">Innovative fusion of classical ragas with contemporary arrangements</p>
+                    <div class="concert-details">
+                        <span class="time"><i class="fas fa-clock"></i> 6:30 PM</span>
+                        <span class="price"><i class="fas fa-ticket-alt"></i> ₹800 - ₹3000</span>
+                    </div>
+                    <a href="{{ site.baseurl }}/concerts/fusion-evening-2025/" class="btn btn-small">Book Tickets</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-footer">
+            <a href="{{ site.baseurl }}/concerts/" class="btn btn-primary">View All Concerts</a>
+        </div>
+    </div>
+</section>
+
+<!-- Musical Philosophy -->
+<section class="musical-philosophy">
+    <div class="container">
+        <div class="philosophy-content">
+            <div class="philosophy-text">
+                <h2>संगीत दर्शन</h2>
+                <h3>Musical Philosophy</h3>
+                <blockquote class="sanskrit-quote">
+                    "सुरं वर्णं तु रागो रूपकं तालः क्रिया।<br>
+                    गीतं वाद्यं तथा नृत्यं तुर्यं भरत लक्षणम्॥"
+                </blockquote>
+                <p class="quote-translation">
+                    "Melody, color, raga, form, rhythm, action - 
+                    Song, instruments, and dance are the characteristics of music according to Bharata."
+                </p>
+                
+                <p class="philosophy-description">
+                    Music is not just performance; it is spiritual practice, emotional expression, and cultural preservation. 
+                    Through the eternal tradition of Bharatiya Shastriya Sangeet, we connect with the divine consciousness 
+                    that flows through every raga, every taal, every note.
+                </p>
+                
+                <div class="core-values">
+                    <div class="value">
+                        <i class="fas fa-heart"></i>
+                        <h4>भाव (Bhava)</h4>
+                        <p>Emotional expression through music</p>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-star"></i>
+                        <h4>साधना (Sadhana)</h4>
+                        <p>Dedicated practice and devotion</p>
+                    </div>
+                    <div class="value">
+                        <i class="fas fa-infinity"></i>
+                        <h4>परंपरा (Parampara)</h4>
+                        <p>Honoring traditional heritage</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="philosophy-image">
+                <img src="{{ site.baseurl }}/assets/images/udita-philosophy.svg" alt="Musical Philosophy">
+                <div class="image-caption">
+                    <p>"Where tradition meets expression, music becomes meditation"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Subscription -->
+<section class="newsletter-subscription">
+    <div class="container">
+        <div class="newsletter-content">
+            <div class="newsletter-info">
+                <h2><i class="fas fa-envelope-open"></i> Stay Connected</h2>
+                <p>Subscribe to receive updates about upcoming concerts, new recordings, and insights into classical music</p>
+            </div>
+            <form class="newsletter-form" action="#" method="post">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </div>
+                <p class="form-note">Join 1000+ music lovers receiving weekly updates</p>
+            </form>
+        </div>
+    </div>
+</section>

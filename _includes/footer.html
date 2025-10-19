@@ -1,0 +1,114 @@
+<footer class="footer">
+    <div class="footer-content">
+        <!-- Top Section -->
+        <div class="footer-top">
+            <div class="footer-section logo-section">
+                <div class="footer-logo">
+                    <span class="logo-om">ॐ</span>
+                    <h3>{{ site.author.name }}</h3>
+                    <p class="footer-tagline">{{ site.music.primary_style }} Vocalist</p>
+                </div>
+                <p class="artist-bio">{{ site.author.bio }}</p>
+                
+                <!-- Gharana Information -->
+                <div class="gharana-info">
+                    <h4><i class="fas fa-star-and-crescent"></i> गुरु परंपरा</h4>
+                    <p><strong>घराना:</strong> {{ site.music.gharana }}</p>
+                    {% if site.music.gurus %}
+                    <p><strong>गुरुजी:</strong> 
+                        {% for guru in site.music.gurus %}
+                            {{ guru }}{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="footer-section quick-links">
+                <h4><i class="fas fa-sitemap"></i> Quick Navigation</h4>
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li><a href="{{ site.baseurl }}/about/">About</a></li>
+                    <li><a href="{{ site.baseurl }}/ragas/">Ragas</a></li>
+                    <li><a href="{{ site.baseurl }}/concerts/">Concerts</a></li>
+                    <li><a href="{{ site.baseurl }}/performances/">Performances</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section musical-info">
+                <h4><i class="fas fa-music"></i> Musical Specializations</h4>
+                <ul class="specializations">
+                    {% for style in site.music.secondary_styles %}
+                    <li><i class="fas fa-note-sticky"></i> {{ style }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h4><i class="fas fa-drum"></i> Instruments</h4>
+                <ul class="instruments">
+                    {% for instrument in site.music.instruments %}
+                    <li><i class="fas fa-hand-holding-heart"></i> {{ instrument }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="footer-section contact-social">
+                <h4><i class="fas fa-heart"></i> Connect & Follow</h4>
+                <div class="social-links">
+                    {% for social in site.social %}
+                    <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" class="social-link" title="{{ social.name }}">
+                        <i class="{{ social.icon }}"></i>
+                        <span>{{ social.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+                
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> {{ site.author.email }}</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Classical Decoration -->
+        <div class="footer-decoration">
+            <div class="classical-border">
+                <span class="border-symbol">❦</span>
+                <span class="border-symbol">♪</span>
+                <span class="border-symbol">❦</span>
+                <span class="border-symbol">♫</span>
+                <span class="border-symbol">❦</span>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+                <p class="sanskrit-blessing">सरस्वती वीणापाणि</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="{{ site.baseurl }}/privacy/">Privacy Policy</a>
+                <a href="{{ site.baseurl }}/terms/">Terms of Service</a>
+                <a href="{{ site.baseurl }}/sitemap.xml">Sitemap</a>
+            </div>
+            
+            <div class="powered-by">
+                <p>Powered by <i class="fas fa-heart text-red"></i> and Jekyll</p>
+                <p class="tribute">Dedicated to the eternal tradition of Bharatiya Sangeet</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Musical Elements -->
+    <div class="footer-bg-elements" aria-hidden="true">
+        <div class="floating-notes">
+            <span class="note">♪</span>
+            <span class="note">♫</span>
+            <span class="note">♪</span>
+            <span class="note">♫</span>
+            <span class="note">♪</span>
+        </div>
+        <div class="raga-pattern"></div>
+    </div>
+</footer>

@@ -1,0 +1,167 @@
+// Variables for Bharatiya Shastriya Sangeet Theme
+// Colors inspired by Indian Classical Music traditions
+
+// Primary Colors - Based on Raga emotions and traditional instruments
+$primary-saffron: #FF6B35;      // Saffron - Sacred, devotional
+$primary-gold: #DAA520;         // Gold - Prosperity, divine
+$primary-burgundy: #8B0000;     // Burgundy - Depth, classical
+$primary-deep-blue: #191970;    // Midnight Blue - Serenity, night ragas
+
+// Secondary Colors - Representing different raga moods
+$secondary-rose: #E6739F;       // Rose - Romance, love songs
+$secondary-ivory: #FFF8DC;      // Ivory - Purity, morning ragas
+$secondary-teal: #008B8B;       // Teal - Monsoon ragas
+$secondary-amber: #FFBF00;      // Amber - Joy, celebration
+
+// Gradient Colors - For premium effects
+$gradient-divine: linear-gradient(135deg, $primary-saffron 0%, $primary-gold 50%, $primary-burgundy 100%);
+$gradient-raga: linear-gradient(45deg, $primary-deep-blue 0%, $secondary-teal 50%, $primary-gold 100%);
+$gradient-sunset: linear-gradient(180deg, $secondary-amber 0%, $primary-saffron 50%, $primary-burgundy 100%);
+$gradient-dawn: linear-gradient(90deg, $secondary-ivory 0%, $secondary-rose 50%, $primary-gold 100%);
+
+// Neutral Colors
+$neutral-charcoal: #2C2C2C;
+$neutral-smoke: #696969;
+$neutral-pearl: #F5F5F5;
+$neutral-snow: #FAFAFA;
+
+// Text Colors
+$text-primary: $neutral-charcoal;
+$text-secondary: $neutral-smoke;
+$text-light: #FFFFFF;
+$text-accent: $primary-burgundy;
+
+// Background Colors
+$bg-primary: $neutral-snow;
+$bg-secondary: $neutral-pearl;
+$bg-dark: $neutral-charcoal;
+$bg-overlay: rgba(0, 0, 0, 0.7);
+
+// Typography - Classical and modern fonts
+$font-classical: 'Cinzel', serif;
+$font-devanagari: 'Noto Sans Devanagari', sans-serif;
+$font-elegant: 'Playfair Display', serif;
+$font-modern: 'Inter', sans-serif;
+
+// Font Sizes - Based on classical proportions
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+$font-size-6xl: 4rem;      // 64px
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing - Based on musical proportions (golden ratio inspired)
+$spacing-xs: 0.25rem;   // 4px
+$spacing-sm: 0.5rem;    // 8px
+$spacing-md: 1rem;      // 16px
+$spacing-lg: 1.5rem;    // 24px
+$spacing-xl: 2rem;      // 32px
+$spacing-2xl: 3rem;     // 48px
+$spacing-3xl: 4rem;     // 64px
+$spacing-4xl: 6rem;     // 96px
+$spacing-5xl: 8rem;     // 128px
+
+// Border Radius - Organic, classical curves
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 1rem;
+$border-radius-xl: 1.5rem;
+$border-radius-full: 50%;
+
+// Shadows - Subtle, premium shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.10);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+// Breakpoints - Responsive design
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1536px;
+
+// Z-Index Layers
+$z-dropdown: 1000;
+$z-modal: 1050;
+$z-popover: 1060;
+$z-tooltip: 1070;
+$z-navbar: 1080;
+
+// Transitions - Smooth, musical timing
+$transition-quick: 0.15s ease-in-out;
+$transition-smooth: 0.3s ease-in-out;
+$transition-slow: 0.5s ease-in-out;
+$transition-musical: 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+// Animation Durations
+$animation-fast: 0.2s;
+$animation-normal: 0.4s;
+$animation-slow: 0.8s;
+$animation-very-slow: 1.2s;
+
+// Musical Elements
+$note-colors: (
+  sa: $primary-saffron,
+  re: $secondary-rose,
+  ga: $primary-gold,
+  ma: $secondary-amber,
+  pa: $primary-deep-blue,
+  dha: $secondary-teal,
+  ni: $primary-burgundy
+);
+
+// Raga Time Colors (for mood-based theming)
+$raga-times: (
+  dawn: $gradient-dawn,
+  morning: $secondary-ivory,
+  afternoon: $primary-gold,
+  evening: $gradient-sunset,
+  night: $primary-deep-blue,
+  late-night: $neutral-charcoal
+);
+
+// Component Specific Variables
+$navbar-height: 80px;
+$navbar-height-mobile: 70px;
+$footer-height: auto;
+$hero-min-height: 100vh;
+$section-padding: $spacing-4xl;
+$section-padding-mobile: $spacing-2xl;
+
+// Form Elements
+$input-border-color: rgba($neutral-smoke, 0.3);
+$input-border-focus: $primary-gold;
+$input-background: $neutral-snow;
+$input-padding: $spacing-md $spacing-lg;
+
+// Button Variants
+$btn-primary-bg: $gradient-divine;
+$btn-primary-text: $text-light;
+$btn-secondary-bg: transparent;
+$btn-secondary-border: $primary-gold;
+$btn-secondary-text: $primary-gold;
+
+// Cards and Content
+$card-background: $neutral-snow;
+$card-border: rgba($neutral-smoke, 0.1);
+$card-shadow: $shadow-md;
+$card-radius: $border-radius-lg;
+
+// Status Colors
+$success-color: #10B981;
+$warning-color: #F59E0B;
+$error-color: #EF4444;
+$info-color: $secondary-teal;

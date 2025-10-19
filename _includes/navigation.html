@@ -1,0 +1,69 @@
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="{{ site.baseurl }}/" class="logo-link">
+                <div class="logo-content">
+                    <span class="logo-om">ॐ</span>
+                    <div class="logo-text">
+                        <h2 class="artist-name">{{ site.author.name }}</h2>
+                        <span class="tagline">भारतीय शास्त्रीय संगीत</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="nav-menu" id="nav-menu">
+            <a href="{{ site.baseurl }}/" class="nav-link {% if page.url == '/' %}active{% endif %}">
+                <i class="fas fa-home"></i>
+                <span>गृह</span>
+            </a>
+            <a href="{{ site.baseurl }}/about/" class="nav-link {% if page.url contains 'about' %}active{% endif %}">
+                <i class="fas fa-user-circle"></i>
+                <span>परिचय</span>
+            </a>
+            <a href="{{ site.baseurl }}/ragas/" class="nav-link {% if page.url contains 'ragas' %}active{% endif %}">
+                <i class="fas fa-music"></i>
+                <span>राग</span>
+            </a>
+            <a href="{{ site.baseurl }}/concerts/" class="nav-link {% if page.url contains 'concerts' %}active{% endif %}">
+                <i class="fas fa-calendar-alt"></i>
+                <span>संगीत सभा</span>
+            </a>
+            <a href="{{ site.baseurl }}/performances/" class="nav-link {% if page.url contains 'performances' %}active{% endif %}">
+                <i class="fas fa-play-circle"></i>
+                <span>प्रस्तुति</span>
+            </a>
+            <a href="{{ site.baseurl }}/blog/" class="nav-link {% if page.url contains 'blog' %}active{% endif %}">
+                <i class="fas fa-feather-alt"></i>
+                <span>ब्लॉग</span>
+            </a>
+            <a href="{{ site.baseurl }}/contact/" class="nav-link {% if page.url contains 'contact' %}active{% endif %}">
+                <i class="fas fa-envelope"></i>
+                <span>संपर्क</span>
+            </a>
+        </div>
+        
+        <!-- Mobile menu toggle -->
+        <div class="nav-toggle" id="nav-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Classical Music Navigation Decorations -->
+<div class="nav-decorations" aria-hidden="true">
+    <div class="raga-lines">
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+        <div class="staff-line"></div>
+    </div>
+    <div class="musical-symbols">
+        <span class="symbol treble">𝄞</span>
+        <span class="symbol note-quarter">♪</span>
+        <span class="symbol note-eighth">♫</span>
+    </div>
+</div>
