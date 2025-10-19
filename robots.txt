@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://uditaranade.github.io/sitemap.xml
+
+# Disallow access to internal files
+Disallow: /assets/js/
+Disallow: /_*
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.sass-cache/
+Disallow: /.jekyll-cache/
+
+# Allow access to CSS and images
+Allow: /assets/css/
+Allow: /assets/images/

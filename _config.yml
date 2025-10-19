@@ -1,0 +1,109 @@
+# GitHub Pages Configuration for Udita Ranade Website
+
+# Site settings
+title: "Udita Ranade - Professional Singer"
+description: "Professional singer specializing in classical and contemporary music. Experience the beauty of music through passionate performances."
+url: "https://uditaranade.github.io"
+baseurl: ""
+
+# Author information
+author:
+  name: "Udita Ranade"
+  email: "contact@uditaranade.com"
+  bio: "Professional Singer specializing in classical and contemporary music"
+
+# SEO settings
+twitter:
+  username: "uditaranade"
+  card: "summary_large_image"
+
+facebook:
+  app_id: ""
+  publisher: ""
+
+og_image: "/assets/images/udita-hero.jpg"
+
+# Social media profiles
+social:
+  - name: "Facebook"
+    url: "https://facebook.com/uditaranade"
+    icon: "fab fa-facebook"
+  - name: "Instagram"
+    url: "https://instagram.com/uditaranade"
+    icon: "fab fa-instagram"
+  - name: "YouTube"
+    url: "https://youtube.com/@uditaranade"
+    icon: "fab fa-youtube"
+  - name: "Spotify"
+    url: "https://open.spotify.com/artist/uditaranade"
+    icon: "fab fa-spotify"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Include/Exclude files
+include:
+  - _pages
+  - assets
+  - .htaccess
+
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+
+# Collections
+collections:
+  concerts:
+    output: true
+    permalink: /:collection/:name/
+  news:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "concerts"
+    values:
+      layout: "concert"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "post"
+
+# Plugin settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# SEO and Analytics
+google_analytics: ""
+google_site_verification: ""
+
+# Performance settings
+sass:
+  style: compressed
+
+# Security settings
+webrick:
+  headers:
+    "X-Frame-Options": "SAMEORIGIN"
+    "X-Content-Type-Options": "nosniff"
+    "X-XSS-Protection": "1; mode=block"
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
