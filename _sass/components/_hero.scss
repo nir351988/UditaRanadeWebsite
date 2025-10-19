@@ -1,0 +1,123 @@
+// Hero Section Styles for Professional Theme
+
+.hero {
+  min-height: $hero-min-height;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  
+  &.professional-hero {
+    @include premium-gradient(135deg);
+    
+    .hero-content {
+      @include container;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-4xl;
+      align-items: center;
+      min-height: 80vh;
+      
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: $spacing-2xl;
+        text-align: center;
+      }
+    }
+    
+    .hero-text {
+      .hero-title {
+        margin-bottom: $spacing-xl;
+        
+        .title-main {
+          @include professional-heading($font-size-6xl);
+          color: $text-light;
+          display: block;
+          margin-bottom: $spacing-sm;
+          
+          @include mobile {
+            font-size: $font-size-4xl;
+          }
+        }
+        
+        .title-subtitle {
+          @include elegant-text($font-size-xl);
+          color: rgba($text-light, 0.9);
+          font-weight: $font-weight-medium;
+          display: block;
+          
+          @include mobile {
+            font-size: $font-size-lg;
+          }
+        }
+      }
+      
+      .hero-description {
+        @include modern-text($font-size-xl);
+        color: rgba($text-light, 0.8);
+        margin-bottom: $spacing-xl;
+        line-height: 1.6;
+        
+        @include mobile {
+          font-size: $font-size-lg;
+        }
+      }
+      
+      .hero-specializations {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-md;
+        margin-bottom: $spacing-2xl;
+        
+        @include mobile {
+          justify-content: center;
+        }
+        
+        .specialization {
+          @include modern-text($font-size-sm);
+          background: rgba($text-light, 0.15);
+          color: $text-light;
+          padding: $spacing-sm $spacing-lg;
+          border-radius: $border-radius-full;
+          border: 1px solid rgba($text-light, 0.3);
+          backdrop-filter: blur(5px);
+        }
+      }
+      
+      .hero-actions {
+        display: flex;
+        gap: $spacing-lg;
+        
+        @include mobile {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+    
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .image-container {
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+        
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: $border-radius-xl;
+          box-shadow: $shadow-xl;
+          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        }
+      }
+    }
+  }
+}

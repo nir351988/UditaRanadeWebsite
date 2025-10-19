@@ -1,0 +1,336 @@
+// Footer Styles for Classical Theme
+
+.site-footer {
+  background: linear-gradient(
+    135deg,
+    rgba($surface-dark, 0.95) 0%,
+    rgba($accent-burgundy, 0.1) 100%
+  );
+  color: $text-light;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba($primary-gold, 0.5),
+      transparent
+    );
+  }
+  
+  .footer-main {
+    padding: $spacing-4xl 0 $spacing-2xl;
+    
+    .footer-content {
+      @include container;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: $spacing-2xl;
+      
+      @include tablet {
+        grid-template-columns: 1fr 1fr;
+        gap: $spacing-xl;
+      }
+      
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: $spacing-lg;
+        text-align: center;
+      }
+    }
+    
+    .footer-brand {
+      .brand-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: $spacing-lg;
+        
+        @include mobile {
+          justify-content: center;
+        }
+        
+        .logo-icon {
+          font-size: $font-size-2xl;
+          color: $primary-gold;
+          margin-right: $spacing-md;
+        }
+        
+        .logo-text {
+          .logo-main {
+            @include classical-heading($font-size-xl);
+            color: $text-light;
+            display: block;
+            line-height: 1;
+          }
+          
+          .logo-subtitle {
+            @include devanagari-text($font-size-sm);
+            color: rgba($text-light, 0.8);
+            font-weight: $font-weight-normal;
+            display: block;
+            line-height: 1;
+            margin-top: 2px;
+          }
+        }
+      }
+      
+      .brand-description {
+        @include elegant-text($font-size-sm);
+        color: rgba($text-light, 0.8);
+        line-height: 1.6;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .gharana-info {
+        @include devanagari-text($font-size-sm);
+        color: rgba($text-light, 0.7);
+        font-style: italic;
+        padding: $spacing-md;
+        background: rgba($primary-saffron, 0.1);
+        border-left: 3px solid $primary-gold;
+        border-radius: $border-radius-sm;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .social-links {
+        display: flex;
+        gap: $spacing-md;
+        
+        @include mobile {
+          justify-content: center;
+        }
+        
+        .social-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          background: rgba($text-light, 0.1);
+          color: rgba($text-light, 0.8);
+          border-radius: 50%;
+          text-decoration: none;
+          font-size: $font-size-lg;
+          transition: $transition-smooth;
+          
+          &:hover {
+            background: $primary-saffron;
+            color: $text-light;
+            transform: translateY(-2px);
+          }
+          
+          &.youtube:hover {
+            background: #ff0000;
+          }
+          
+          &.spotify:hover {
+            background: #1db954;
+          }
+          
+          &.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+          }
+        }
+      }
+    }
+    
+    .footer-section {
+      .section-title {
+        @include classical-heading($font-size-lg);
+        color: $text-light;
+        margin-bottom: $spacing-lg;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -#{$spacing-sm};
+          left: 0;
+          width: 30px;
+          height: 2px;
+          background: $primary-gold;
+          
+          @include mobile {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+      
+      .section-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          margin-bottom: $spacing-sm;
+          
+          a {
+            @include modern-text($font-size-sm);
+            color: rgba($text-light, 0.8);
+            text-decoration: none;
+            transition: $transition-smooth;
+            
+            &:hover {
+              color: $primary-gold;
+              padding-left: $spacing-sm;
+            }
+          }
+        }
+      }
+      
+      .contact-info {
+        .contact-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: $spacing-md;
+          
+          @include mobile {
+            justify-content: center;
+            text-align: left;
+          }
+          
+          .contact-icon {
+            color: $primary-gold;
+            margin-right: $spacing-md;
+            margin-top: 2px;
+            font-size: $font-size-sm;
+          }
+          
+          .contact-text {
+            @include modern-text($font-size-sm);
+            color: rgba($text-light, 0.8);
+            
+            a {
+              color: inherit;
+              text-decoration: none;
+              transition: $transition-smooth;
+              
+              &:hover {
+                color: $primary-gold;
+              }
+            }
+          }
+        }
+      }
+      
+      .newsletter-signup {
+        .newsletter-title {
+          @include elegant-text($font-size-sm);
+          color: rgba($text-light, 0.9);
+          margin-bottom: $spacing-md;
+        }
+        
+        .newsletter-form {
+          display: flex;
+          gap: $spacing-sm;
+          
+          @include mobile {
+            flex-direction: column;
+          }
+          
+          .newsletter-input {
+            flex: 1;
+            padding: $spacing-sm $spacing-md;
+            border: 1px solid rgba($text-light, 0.3);
+            border-radius: $border-radius-sm;
+            background: rgba($text-light, 0.1);
+            color: $text-light;
+            font-size: $font-size-sm;
+            
+            &::placeholder {
+              color: rgba($text-light, 0.6);
+            }
+            
+            &:focus {
+              outline: none;
+              border-color: $primary-gold;
+              background: rgba($text-light, 0.15);
+            }
+          }
+          
+          .newsletter-button {
+            @extend .btn;
+            @extend .btn-secondary;
+            padding: $spacing-sm $spacing-md;
+            font-size: $font-size-sm;
+            white-space: nowrap;
+          }
+        }
+        
+        .newsletter-note {
+          @include modern-text($font-size-xs);
+          color: rgba($text-light, 0.6);
+          margin-top: $spacing-sm;
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    padding: $spacing-lg 0;
+    border-top: 1px solid rgba($text-light, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    
+    .footer-bottom-content {
+      @include container;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      @include mobile {
+        flex-direction: column;
+        gap: $spacing-md;
+        text-align: center;
+      }
+    }
+    
+    .copyright {
+      @include modern-text($font-size-sm);
+      color: rgba($text-light, 0.7);
+      
+      .heart {
+        color: $accent-burgundy;
+        margin: 0 $spacing-xs;
+      }
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: $spacing-lg;
+      
+      @include mobile {
+        gap: $spacing-md;
+      }
+      
+      a {
+        @include modern-text($font-size-sm);
+        color: rgba($text-light, 0.7);
+        text-decoration: none;
+        transition: $transition-smooth;
+        
+        &:hover {
+          color: $primary-gold;
+        }
+      }
+    }
+    
+    .sanskrit-blessing {
+      @include devanagari-text($font-size-xs);
+      color: rgba($text-light, 0.6);
+      font-style: italic;
+      text-align: center;
+      margin-top: $spacing-md;
+      
+      @include mobile {
+        margin-top: $spacing-sm;
+      }
+    }
+  }
+}

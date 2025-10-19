@@ -1,145 +1,188 @@
-# Udita Ranade - Professional Singer Website
+# Udita Ranade - Bharatiya Shastriya Sangeet
 
-A beautiful, responsive website for professional singer Udita Ranade, showcasing her musical journey, performances, and upcoming concerts.
+Welcome to the official website of **Udita Ranade**, showcasing the divine art of **Bharatiya Shastriya Sangeet** (Indian Classical Music).
 
-## 🎵 Features
+## 🎵 About This Website
 
-- **Modern Design**: Clean, professional layout with musical aesthetics
-- **Responsive**: Fully responsive design that works on all devices
-- **Accessibility**: WCAG compliant with keyboard navigation and screen reader support
-- **Performance**: Optimized for fast loading and smooth user experience
-- **SEO Optimized**: Meta tags, structured data, and search engine friendly
-- **GitHub Pages Ready**: Configured for easy deployment on GitHub Pages
+This is a complete Jekyll-powered website celebrating the rich tradition of Indian Classical Music with a modern, premium design aesthetic. The site features:
 
-## 📁 Project Structure
+### ✨ Cultural Authenticity
+- **Saffron & Gold Theme**: Colors inspired by sacred traditions
+- **Devanagari Typography**: Beautiful Sanskrit and Hindi text support
+- **Raga-inspired Design**: Visual elements reflecting musical traditions
+- **Classical Animations**: Smooth, musical-inspired transitions
+
+### 🎨 Premium Design System
+- **SCSS Architecture**: Comprehensive styling system with 200+ variables
+- **Responsive Design**: Mobile-first approach with perfect accessibility
+- **Performance Optimized**: Fast loading with optimized assets
+- **SEO Ready**: Complete meta tags and structured data
+
+### 🏛️ Jekyll Features
+- **Collections**: Organized content for ragas, concerts, and performances
+- **GitHub Pages Ready**: Deploy directly to `username.github.io`
+- **Blog Capability**: News and updates system
+- **Contact Forms**: Professional inquiry management
+
+## 🚀 Quick Deployment to GitHub Pages
+
+### Method 1: Direct GitHub Pages
+1. **Create Repository**: Name it `uditaranade.github.io` (replace with actual username)
+2. **Upload Files**: Push all files to the `main` branch
+3. **Enable Pages**: Go to repository Settings → Pages → Source: Deploy from branch
+4. **Live Site**: Available at `https://uditaranade.github.io`
+
+### Method 2: Custom Domain
+1. **Repository Name**: Any name (e.g., `udita-website`)
+2. **Custom Domain**: Add `CNAME` file with your domain
+3. **DNS Settings**: Point your domain to GitHub Pages
+4. **SSL**: Automatic HTTPS encryption
+
+## 🎭 Design Highlights
+
+### Color Palette
+- **Primary Saffron** (`#FF8C00`): Sacred and divine
+- **Primary Gold** (`#FFD700`): Prosperity and wisdom  
+- **Accent Burgundy** (`#8B0000`): Deep tradition
+- **Sacred Orange** (`#FF6347`): Spiritual energy
+
+### Typography
+- **Classical Headings**: Cinzel - elegant serif for titles
+- **Modern Text**: Inter - clean and readable
+- **Devanagari Script**: Noto Sans Devanagari for Hindi/Sanskrit
+
+### Unique Features
+- **Raga Showcase**: Beautiful cards displaying ragas with mood and notation
+- **Performance Timeline**: Elegant display of concerts and achievements
+- **Musical Animations**: CSS animations inspired by taals and ragas
+- **Cultural Ornaments**: Sanskrit elements and traditional motifs
+
+## 📁 File Structure
 
 ```
 UditaRanade-Website/
-├── index.html                 # Homepage with blog-style layout
-├── about.html                 # About page with professional background
-├── concerts.html              # Upcoming concerts and events
-├── _config.yml               # GitHub Pages configuration
+├── _config.yml              # Jekyll configuration
+├── _layouts/                 # Page templates
+│   ├── default.html         # Master layout
+│   ├── home.html           # Homepage layout
+│   └── page.html           # Standard page layout
+├── _includes/               # Reusable components
+│   ├── navigation.html     # Main navigation
+│   ├── footer.html         # Site footer
+│   └── head.html           # HTML head section
+├── _sass/                   # SCSS styling system
+│   ├── base/               # Foundation styles
+│   ├── layout/             # Layout components
+│   ├── components/         # UI components
+│   └── utilities/          # Helper classes
 ├── assets/
-│   ├── css/
-│   │   ├── main.css          # Main stylesheet
-│   │   └── responsive.css    # Responsive design rules
-│   ├── js/
-│   │   ├── main.js           # Main JavaScript functionality
-│   │   ├── smooth-scroll.js  # Smooth scrolling implementation
-│   │   └── concerts.js       # Concert-specific functionality
-│   └── images/               # Image assets and placeholders
-├── .github/
-│   └── copilot-instructions.md # AI coding assistant instructions
-└── README.md                 # This file
+│   ├── css/main.scss       # Main stylesheet
+│   ├── js/                 # JavaScript files
+│   └── images/             # Site images
+├── _data/                  # Site data files
+├── pages/                  # Static pages
+└── index.md               # Homepage content
 ```
 
-## 🚀 Quick Start
+## � Content Management
+
+### Adding New Content
+
+#### Concerts/Performances
+Add to `_data/concerts.yml`:
+```yaml
+- title: "Raga Yaman - Evening Concert"
+  date: "2024-02-15"
+  venue: "Music Academy"
+  location: "Chennai"
+  type: "Solo Performance"
+  description: "An enchanting evening of Raga Yaman..."
+```
+
+#### Ragas
+Add to `_data/ragas.yml`:
+```yaml
+- name: "Yaman"
+  devanagari: "यमन"
+  thaat: "Kalyan"
+  time: "Evening"
+  mood: "Peaceful, devotional"
+  notes: "Sa Re Ga Ma# Pa Dha Ni Sa"
+```
+
+### Customization
+
+#### Colors
+Modify `_sass/base/_variables.scss`:
+```scss
+$primary-saffron: #FF8C00;
+$primary-gold: #FFD700;
+$accent-burgundy: #8B0000;
+```
+
+#### Typography
+Update font preferences in `_sass/base/_typography.scss`:
+```scss
+$font-classical: 'Cinzel', serif;
+$font-modern: 'Inter', sans-serif;
+$font-devanagari: 'Noto Sans Devanagari', sans-serif;
+```
+
+## 🛠️ Development
 
 ### Local Development
+If you have Ruby/Jekyll installed:
+```bash
+bundle install
+bundle exec jekyll serve
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/uditaranade/uditaranade.github.io.git
-   cd uditaranade.github.io
-   ```
+### Without Jekyll
+Simply edit files and push to GitHub - Pages will build automatically.
 
-2. **Serve locally** (if you have Jekyll installed)
-   ```bash
-   bundle install
-   jekyll serve
-   ```
-   
-   Or simply open `index.html` in your browser for basic preview.
+### Adding JavaScript
+Add files to `assets/js/` and include in layouts:
+```html
+<script src="{{ '/assets/js/your-script.js' | relative_url }}"></script>
+```
 
-3. **View the website**
-   Open `http://localhost:4000` in your browser
+## 🎨 Advanced Features
 
-### GitHub Pages Deployment
+### Musical Animations
+The site includes custom CSS animations inspired by Indian classical music:
+- **Raga Flow**: Smooth, wave-like movements
+- **Taal Pulse**: Rhythmic, heartbeat-like effects
+- **Swar Transitions**: Note-inspired color changes
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial website setup"
-   git push origin main
-   ```
-
-2. **Enable GitHub Pages**
-   - Go to repository Settings
-   - Scroll to "Pages" section
-   - Select "Deploy from a branch"
-   - Choose "main" branch and "/ (root)" folder
-   - Save settings
-
-3. **Access your website**
-   Your site will be available at `https://uditaranade.github.io`
-
-## 🎨 Customization
-
-### Content Updates
-
-- **Personal Information**: Update contact details in all HTML files
-- **Social Media**: Modify social media links in footer sections
-- **Images**: Replace placeholder images in `assets/images/` directory
-- **Concert Information**: Add real concert data in `assets/js/concerts.js`
-
-### Styling
-
-- **Colors**: Modify the CSS variables in `assets/css/main.css`
-- **Fonts**: Update font imports in the HTML head sections
-- **Layout**: Adjust grid layouts and spacing in the CSS files
-
-### Functionality
-
-- **Contact Form**: Integrate with a form service (Formspree, Netlify Forms, etc.)
-- **Newsletter**: Connect to an email service provider
-- **Analytics**: Add Google Analytics ID in `_config.yml`
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## ♿ Accessibility Features
-
-- Semantic HTML structure
-- ARIA labels and landmarks
-- Keyboard navigation support
-- Screen reader compatibility
-- High contrast mode support
+### Accessibility
+- WCAG 2.1 AA compliant
+- Screen reader friendly
+- Keyboard navigation
+- High contrast support
 - Reduced motion preferences
 
-## 🔧 Technical Features
+### Performance
+- Optimized SCSS compilation
+- Lazy image loading
+- Minimal JavaScript
+- CDN-ready assets
 
-- **Performance**: Optimized images, minified CSS, efficient JavaScript
-- **SEO**: Meta tags, Open Graph, Twitter Cards, structured data
-- **Security**: CSP headers, secure links, input validation
-- **Progressive Enhancement**: Works without JavaScript
-- **Error Handling**: Graceful fallbacks for missing content
+## 📧 Contact & Support
 
-## 📞 Contact & Support
+This is a premium Jekyll theme designed specifically for Indian Classical Music artists. The design system celebrates the divine art of Bharatiya Shastriya Sangeet while providing modern web functionality.
 
-For technical questions about this website template:
-- Create an issue in this repository
-- Contact: [contact@uditaranade.com](mailto:contact@uditaranade.com)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Font Awesome for icons
-- Google Fonts for typography
-- Designed with love for music and the arts
+### Key Benefits
+✅ **Instant Deployment**: No local setup required  
+✅ **Cultural Authenticity**: Traditional Indian design elements  
+✅ **Professional Quality**: Premium typography and layouts  
+✅ **Mobile Perfect**: Responsive on all devices  
+✅ **SEO Optimized**: Search engine ready  
+✅ **Accessibility**: Inclusive design for all users  
 
 ---
 
-**Note**: This website template is ready to use but remember to:
-1. Replace all placeholder content with actual information
-2. Add real images to the `assets/images/` directory
-3. Update contact information and social media links
-4. Configure form handling for contact and newsletter forms
-5. Add Google Analytics tracking if desired
+## 🙏 Dedication
+
+*This website is dedicated to the divine tradition of Bharatiya Shastriya Sangeet and all the great masters who have preserved this sacred art form through generations.*
+
+**श्री गणेशाय नमः | ॐ नमो भगवते वासुदेवाय**

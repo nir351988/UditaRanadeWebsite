@@ -1,8 +1,8 @@
 # GitHub Pages Configuration for Udita Ranade Website
 
 # Site settings
-title: "Udita Ranade - Bharatiya Shastriya Sangeet Vocalist"
-description: "Master of Bharatiya Shastriya Sangeet (Indian Classical Music). Experience the timeless beauty of ragas, talas, and classical traditions through soulful performances."
+title: "Udita Ranade - Professional Singer & Performer"
+description: "Professional Singer & Performer captivating audiences worldwide with powerful vocals and emotive performances across multiple genres and languages."
 url: "https://nir351988.github.io"
 baseurl: "/UditaRanadeWebsite"
 
@@ -10,15 +10,15 @@ baseurl: "/UditaRanadeWebsite"
 author:
   name: "Udita Ranade"
   email: "contact@uditaranade.com"
-  bio: "Bharatiya Shastriya Sangeet Vocalist | Classical Indian Music Artist | Raga Specialist"
+  bio: "Professional Singer & Performer | Multi-Genre Vocalist | Recording Artist"
   
 # Musical specializations
 music:
-  primary_style: "Bharatiya Shastriya Sangeet"
-  secondary_styles: ["Contemporary Fusion", "Devotional Music", "Film Playback"]
-  instruments: ["Vocal", "Harmonium", "Tanpura"]
-  gharana: "Gwalior Gharana"
-  gurus: ["Pandit Rajesh Kumar", "Ustad Mohammed Ali"]
+  primary_style: "Contemporary Classical"
+  secondary_styles: ["Opera", "World Music", "Jazz Standards"]
+  specialties: ["Solo Performances", "Ensemble Work", "Recording", "Voice Coaching"]
+  languages: ["English", "Italian", "French", "German", "Spanish"]
+  venues: ["Concert Halls", "Opera Houses", "Recording Studios", "Private Events"]
 
 # SEO settings
 twitter:

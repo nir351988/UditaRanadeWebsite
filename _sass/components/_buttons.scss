@@ -1,0 +1,123 @@
+// Button Styles for Professional Theme
+
+.btn {
+  @include button-base;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: $transition-smooth;
+  
+  &:focus {
+    outline: 2px solid $accent-sapphire;
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // Primary button - professional gradient
+  &.btn-primary {
+    @include premium-gradient;
+    color: $text-light;
+    font-weight: $font-weight-medium;
+    
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+      filter: brightness(1.1);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  
+  // Secondary button - elegant outline
+  &.btn-secondary {
+    background: transparent;
+    color: $primary-navy;
+    border: 2px solid $primary-navy;
+    font-weight: $font-weight-medium;
+    
+    &:hover:not(:disabled) {
+      background: $primary-navy;
+      color: $text-light;
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Ghost button - minimal style
+  &.btn-ghost {
+    background: transparent;
+    color: $accent-gold;
+    border: 1px solid $accent-gold;
+    
+    &:hover:not(:disabled) {
+      background: $accent-gold;
+      color: $text-light;
+    }
+  }
+  
+  // Light button - for dark backgrounds
+  &.btn-light {
+    background: $text-light;
+    color: $primary-navy;
+    border: 1px solid rgba($text-light, 0.3);
+    
+    &:hover:not(:disabled) {
+      background: rgba($text-light, 0.9);
+      transform: translateY(-1px);
+    }
+  }
+  
+  // Size variations
+  &.btn-small {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+  }
+  
+  &.btn-large {
+    padding: $spacing-lg $spacing-2xl;
+    font-size: $font-size-lg;
+  }
+  
+  &.btn-block {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  // Icon buttons
+  &.btn-icon-only {
+    padding: $spacing-md;
+    aspect-ratio: 1;
+    
+    &.btn-small {
+      padding: $spacing-sm;
+    }
+    
+    &.btn-large {
+      padding: $spacing-lg;
+    }
+  }
+}
+
+// Button groups
+.btn-group {
+  display: flex;
+  gap: $spacing-md;
+  
+  @include mobile {
+    flex-direction: column;
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

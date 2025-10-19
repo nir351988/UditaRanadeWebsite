@@ -1,28 +1,24 @@
----
----
+// Main SCSS file importing all components
 
-// Main SCSS file for Udita Ranade Website
-// Bharatiya Shastriya Sangeet Theme - Complete Classical Music Design System
-
-// Base styles - Foundation layer
+// Base styles
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/reset';
 @import 'base/typography';
 
-// Layout components - Structural layer
+// Layout components
 @import 'layout/grid';
 @import 'layout/containers';
 @import 'layout/header';
 @import 'layout/footer';
 
-// UI components - Interactive layer
+// UI components
 @import 'components/navigation';
 @import 'components/buttons';
 @import 'components/hero';
 @import 'components/cards';
 @import 'components/forms';
 
-// Utilities - Helper layer
+// Utilities
 @import 'utilities/helpers';
 @import 'utilities/responsive';

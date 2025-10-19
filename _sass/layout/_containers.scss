@@ -1,0 +1,380 @@
+// Container Layouts for Classical Design
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $background-primary;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: $header-height;
+  
+  &.with-hero {
+    padding-top: 0;
+  }
+}
+
+.section {
+  padding: $section-padding-y 0;
+  
+  &.section-sm {
+    padding: $spacing-2xl 0;
+  }
+  
+  &.section-lg {
+    padding: $spacing-6xl 0;
+  }
+  
+  &.section-xl {
+    padding: 8rem 0;
+  }
+  
+  &.section-hero {
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  &.section-featured {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-saffron, 0.03) 0%,
+      rgba($primary-gold, 0.03) 100%
+    );
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba($primary-saffron, 0.3),
+        transparent
+      );
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba($primary-gold, 0.3),
+        transparent
+      );
+    }
+  }
+  
+  &.section-dark {
+    background: $surface-dark;
+    color: $text-light;
+    
+    .section-title,
+    .section-subtitle {
+      color: $text-light;
+    }
+  }
+  
+  &.section-gradient {
+    @include raga-gradient(135deg);
+    color: $text-light;
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 30% 20%,
+        rgba($text-light, 0.1) 0%,
+        transparent 50%
+      );
+      pointer-events: none;
+    }
+    
+    .section-title,
+    .section-subtitle {
+      color: $text-light;
+    }
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+  
+  &.text-left {
+    text-align: left;
+  }
+  
+  &.text-right {
+    text-align: right;
+  }
+  
+  .section-subtitle {
+    @include devanagari-text($font-size-lg);
+    color: rgba($text-primary, 0.7);
+    margin-bottom: $spacing-md;
+    
+    &.with-ornament {
+      position: relative;
+      display: inline-block;
+      
+      &::before,
+      &::after {
+        content: '◇';
+        color: $primary-gold;
+        margin: 0 $spacing-md;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+  
+  .section-title {
+    @include classical-heading($font-size-4xl);
+    color: $text-primary;
+    margin-bottom: $spacing-lg;
+    position: relative;
+    
+    @include mobile {
+      font-size: $font-size-3xl;
+    }
+    
+    &.with-underline {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -#{$spacing-md};
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          $primary-saffron,
+          $primary-gold
+        );
+        border-radius: $border-radius-sm;
+      }
+      
+      &.text-left::after {
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+  
+  .section-description {
+    @include elegant-text($font-size-lg);
+    color: rgba($text-primary, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    
+    &.text-left {
+      margin: 0;
+    }
+    
+    @include mobile {
+      font-size: $font-size-md;
+    }
+  }
+}
+
+.content-wrapper {
+  @include container;
+  position: relative;
+  
+  &.content-narrow {
+    max-width: 800px;
+  }
+  
+  &.content-wide {
+    max-width: 1400px;
+  }
+  
+  &.content-full {
+    max-width: none;
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+}
+
+.two-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-4xl;
+  align-items: start;
+  
+  @include tablet {
+    gap: $spacing-2xl;
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+  
+  &.reverse {
+    @include tablet-up {
+      .column:first-child {
+        order: 2;
+      }
+      
+      .column:last-child {
+        order: 1;
+      }
+    }
+  }
+  
+  &.align-center {
+    align-items: center;
+  }
+  
+  .column {
+    &.sticky {
+      position: sticky;
+      top: $spacing-2xl;
+    }
+  }
+}
+
+.three-column-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: $spacing-2xl;
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+  
+  .main-column {
+    grid-column: 2;
+    
+    @include tablet {
+      grid-column: 1;
+      order: 1;
+    }
+  }
+  
+  .sidebar {
+    &.left {
+      grid-column: 1;
+      
+      @include tablet {
+        order: 0;
+      }
+    }
+    
+    &.right {
+      grid-column: 3;
+      
+      @include tablet {
+        order: 2;
+      }
+    }
+  }
+}
+
+// Special layouts for classical content
+.raga-showcase {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: $spacing-2xl;
+  
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+  
+  .raga-info {
+    @include elegant-card;
+    padding: $spacing-xl;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-saffron, 0.05) 0%,
+      rgba($primary-gold, 0.05) 100%
+    );
+    border: 1px solid rgba($primary-saffron, 0.2);
+    height: fit-content;
+    
+    @include tablet {
+      order: 2;
+    }
+  }
+  
+  .raga-content {
+    @include tablet {
+      order: 1;
+    }
+  }
+}
+
+.performance-timeline {
+  position: relative;
+  padding-left: $spacing-2xl;
+  
+  @include mobile {
+    padding-left: $spacing-lg;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: $spacing-md;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      $primary-saffron,
+      $primary-gold,
+      $accent-burgundy
+    );
+    
+    @include mobile {
+      left: $spacing-sm;
+    }
+  }
+  
+  .timeline-item {
+    position: relative;
+    margin-bottom: $spacing-2xl;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: -#{$spacing-xl + $spacing-xs};
+      top: $spacing-md;
+      width: 12px;
+      height: 12px;
+      background: $primary-gold;
+      border: 3px solid $surface-light;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba($primary-gold, 0.3);
+      
+      @include mobile {
+        left: -#{$spacing-md + $spacing-xs};
+      }
+    }
+    
+    .timeline-content {
+      @include elegant-card;
+      padding: $spacing-xl;
+      background: $surface-light;
+    }
+  }
+}

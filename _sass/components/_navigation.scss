@@ -1,0 +1,235 @@
+// Navigation Styles for Classical Theme
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  background: rgba($bg-primary, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($primary-gold, 0.2);
+  z-index: $z-navbar;
+  transition: all $transition-smooth;
+  
+  @include mobile {
+    height: $navbar-height-mobile;
+  }
+  
+  .nav-container {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .nav-logo {
+    .logo-link {
+      text-decoration: none;
+      color: inherit;
+      
+      .logo-content {
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+        
+        .logo-om {
+          font-size: $font-size-2xl;
+          color: $primary-saffron;
+          @include taal-pulse(2s);
+        }
+        
+        .logo-text {
+          .artist-name {
+            @include classical-heading($font-size-xl);
+            margin: 0;
+            @include text-gradient($gradient-divine);
+          }
+          
+          .tagline {
+            @include devanagari-text($font-size-xs);
+            color: $primary-gold;
+            display: block;
+            margin-top: -2px;
+          }
+        }
+      }
+    }
+  }
+  
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    
+    @include mobile {
+      position: fixed;
+      top: $navbar-height-mobile;
+      left: 0;
+      right: 0;
+      background: $bg-primary;
+      flex-direction: column;
+      padding: $spacing-xl;
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all $transition-smooth;
+      
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $spacing-xs;
+      text-decoration: none;
+      color: $text-primary;
+      padding: $spacing-sm $spacing-md;
+      border-radius: $border-radius-md;
+      transition: all $transition-smooth;
+      position: relative;
+      
+      i {
+        font-size: $font-size-lg;
+        color: $primary-gold;
+      }
+      
+      span {
+        @include devanagari-text($font-size-xs);
+        font-weight: $font-weight-medium;
+      }
+      
+      &:hover {
+        background: rgba($primary-gold, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      &.active {
+        background: rgba($primary-gold, 0.2);
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4px;
+          height: 4px;
+          background: $primary-gold;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: $spacing-sm;
+    
+    @include mobile {
+      display: flex;
+    }
+    
+    .bar {
+      width: 25px;
+      height: 3px;
+      background: $primary-gold;
+      border-radius: 2px;
+      transition: all $transition-smooth;
+    }
+    
+    &.active {
+      .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      
+      .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+}
+
+// Navigation Decorations
+.nav-decorations {
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  right: 0;
+  height: 20px;
+  overflow: hidden;
+  pointer-events: none;
+  
+  @include mobile {
+    top: $navbar-height-mobile;
+  }
+  
+  .raga-lines {
+    position: relative;
+    height: 100%;
+    
+    .staff-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba($primary-gold, 0.3);
+      
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          top: #{($i - 1) * 4px};
+        }
+      }
+    }
+  }
+  
+  .musical-symbols {
+    position: absolute;
+    top: 0;
+    right: $spacing-xl;
+    display: flex;
+    gap: $spacing-lg;
+    height: 100%;
+    align-items: center;
+    
+    .symbol {
+      color: rgba($primary-gold, 0.4);
+      font-size: $font-size-sm;
+      @include musical-notes-float;
+      
+      &.treble {
+        animation-delay: 0s;
+      }
+      
+      &.note-quarter {
+        animation-delay: 1s;
+      }
+      
+      &.note-eighth {
+        animation-delay: 2s;
+      }
+    }
+  }
+}
+
+// Add space for fixed navbar
+body {
+  padding-top: $navbar-height;
+  
+  @include mobile {
+    padding-top: $navbar-height-mobile;
+  }
+}

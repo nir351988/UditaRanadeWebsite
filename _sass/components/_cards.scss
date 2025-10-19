@@ -1,0 +1,309 @@
+// Card Styles for Classical Music Content
+
+.card {
+  @include elegant-card;
+  background: $surface-light;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: $transition-smooth;
+  
+  &:hover {
+    transform: translateY(-#{$spacing-xs});
+    box-shadow: $shadow-2xl;
+  }
+  
+  &.raga-card {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      rgba($primary-saffron, 0.05) 0%,
+      rgba($primary-gold, 0.05) 100%
+    );
+    border: 1px solid rgba($primary-saffron, 0.2);
+    
+    .card-header {
+      padding: $spacing-xl;
+      position: relative;
+      
+      .raga-notation {
+        position: absolute;
+        top: $spacing-md;
+        right: $spacing-md;
+        @include devanagari-text($font-size-sm);
+        color: rgba($text-primary, 0.6);
+        background: rgba($primary-saffron, 0.1);
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-sm;
+      }
+      
+      .raga-name {
+        @include classical-heading($font-size-xl);
+        color: $text-primary;
+        margin-bottom: $spacing-sm;
+      }
+      
+      .raga-type {
+        @include elegant-text($font-size-sm);
+        color: rgba($text-primary, 0.7);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    
+    .card-content {
+      padding: 0 $spacing-xl $spacing-xl;
+      
+      .raga-mood {
+        @include modern-text($font-size-sm);
+        color: rgba($text-primary, 0.8);
+        margin-bottom: $spacing-md;
+        line-height: 1.5;
+      }
+      
+      .swar-pattern {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+        margin-bottom: $spacing-lg;
+        
+        .swar {
+          @include devanagari-text($font-size-xs);
+          background: rgba($primary-gold, 0.2);
+          color: $text-primary;
+          padding: $spacing-xs $spacing-sm;
+          border-radius: $border-radius-sm;
+          border: 1px solid rgba($primary-gold, 0.3);
+        }
+      }
+      
+      .raga-time {
+        @include elegant-text($font-size-xs);
+        color: rgba($text-primary, 0.6);
+        display: flex;
+        align-items: center;
+        gap: $spacing-xs;
+        
+        .time-icon {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: $primary-gold;
+        }
+      }
+    }
+  }
+  
+  &.performance-card {
+    background: linear-gradient(
+      135deg,
+      rgba($accent-burgundy, 0.05) 0%,
+      rgba($primary-gold, 0.05) 100%
+    );
+    border: 1px solid rgba($accent-burgundy, 0.2);
+    
+    .card-image {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      
+      .image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, 0.3) 100%
+        );
+      }
+      
+      .performance-type {
+        position: absolute;
+        top: $spacing-md;
+        left: $spacing-md;
+        @include modern-text($font-size-xs);
+        background: rgba($text-light, 0.9);
+        color: $text-primary;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-sm;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    
+    .card-content {
+      padding: $spacing-xl;
+      
+      .performance-title {
+        @include classical-heading($font-size-lg);
+        color: $text-primary;
+        margin-bottom: $spacing-sm;
+      }
+      
+      .performance-venue {
+        @include elegant-text($font-size-sm);
+        color: rgba($text-primary, 0.7);
+        margin-bottom: $spacing-md;
+      }
+      
+      .performance-date {
+        @include modern-text($font-size-sm);
+        color: $primary-gold;
+        font-weight: $font-weight-medium;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .performance-details {
+        @include elegant-text($font-size-sm);
+        color: rgba($text-primary, 0.8);
+        line-height: 1.5;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .performance-actions {
+        display: flex;
+        gap: $spacing-md;
+        
+        .btn-small {
+          font-size: $font-size-xs;
+          padding: $spacing-sm $spacing-md;
+        }
+      }
+    }
+  }
+  
+  &.news-card {
+    background: $surface-light;
+    border: 1px solid rgba($text-primary, 0.1);
+    
+    .card-content {
+      padding: $spacing-xl;
+      
+      .news-date {
+        @include modern-text($font-size-xs);
+        color: rgba($text-primary, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: $spacing-sm;
+      }
+      
+      .news-title {
+        @include classical-heading($font-size-lg);
+        color: $text-primary;
+        margin-bottom: $spacing-md;
+        
+        a {
+          color: inherit;
+          text-decoration: none;
+          transition: $transition-smooth;
+          
+          &:hover {
+            color: $primary-saffron;
+          }
+        }
+      }
+      
+      .news-excerpt {
+        @include elegant-text($font-size-sm);
+        color: rgba($text-primary, 0.8);
+        line-height: 1.6;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .news-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+        
+        .tag {
+          @include modern-text($font-size-xs);
+          background: rgba($primary-saffron, 0.1);
+          color: rgba($text-primary, 0.7);
+          padding: $spacing-xs $spacing-sm;
+          border-radius: $border-radius-sm;
+          border: 1px solid rgba($primary-saffron, 0.2);
+        }
+      }
+    }
+  }
+  
+  &.teaching-card {
+    background: linear-gradient(
+      135deg,
+      rgba($secondary-orange, 0.05) 0%,
+      rgba($primary-saffron, 0.05) 100%
+    );
+    border: 1px solid rgba($secondary-orange, 0.2);
+    
+    .card-icon {
+      padding: $spacing-xl $spacing-xl 0;
+      text-align: center;
+      
+      .icon {
+        font-size: $font-size-3xl;
+        color: $secondary-orange;
+        margin-bottom: $spacing-md;
+      }
+    }
+    
+    .card-content {
+      padding: 0 $spacing-xl $spacing-xl;
+      text-align: center;
+      
+      .teaching-title {
+        @include classical-heading($font-size-lg);
+        color: $text-primary;
+        margin-bottom: $spacing-md;
+      }
+      
+      .teaching-description {
+        @include elegant-text($font-size-sm);
+        color: rgba($text-primary, 0.8);
+        line-height: 1.5;
+        margin-bottom: $spacing-lg;
+      }
+      
+      .teaching-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 $spacing-lg;
+        
+        li {
+          @include modern-text($font-size-sm);
+          color: rgba($text-primary, 0.7);
+          padding: $spacing-xs 0;
+          
+          &::before {
+            content: '✓';
+            color: $secondary-orange;
+            font-weight: bold;
+            margin-right: $spacing-sm;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Card Grid Layouts
+.card-grid {
+  display: grid;
+  gap: $spacing-xl;
+  
+  &.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  &.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}

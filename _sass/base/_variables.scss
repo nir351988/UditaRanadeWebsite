@@ -1,49 +1,55 @@
-// Variables for Bharatiya Shastriya Sangeet Theme
-// Colors inspired by Indian Classical Music traditions
+// Variables for Premium Professional Singer Profile
+// Sophisticated and modern color palette for professional artists
 
-// Primary Colors - Based on Raga emotions and traditional instruments
-$primary-saffron: #FF6B35;      // Saffron - Sacred, devotional
-$primary-gold: #DAA520;         // Gold - Prosperity, divine
-$primary-burgundy: #8B0000;     // Burgundy - Depth, classical
-$primary-deep-blue: #191970;    // Midnight Blue - Serenity, night ragas
+// Primary Colors - Professional and elegant
+$primary-navy: #1a237e;         // Deep navy - sophisticated and trustworthy
+$primary-charcoal: #263238;     // Charcoal - modern and elegant
+$primary-slate: #37474f;        // Slate - professional depth
+$primary-midnight: #0d1421;     // Midnight - luxury and depth
 
-// Secondary Colors - Representing different raga moods
-$secondary-rose: #E6739F;       // Rose - Romance, love songs
-$secondary-ivory: #FFF8DC;      // Ivory - Purity, morning ragas
-$secondary-teal: #008B8B;       // Teal - Monsoon ragas
-$secondary-amber: #FFBF00;      // Amber - Joy, celebration
+// Secondary Colors - Sophisticated supporting palette
+$secondary-platinum: #f5f5f5;   // Platinum - premium and clean
+$secondary-silver: #bdbdbd;     // Silver - refined elegance
+$secondary-pearl: #fafafa;      // Pearl white - pure and premium
+$secondary-graphite: #424242;   // Graphite - modern contrast
 
-// Gradient Colors - For premium effects
-$gradient-divine: linear-gradient(135deg, $primary-saffron 0%, $primary-gold 50%, $primary-burgundy 100%);
-$gradient-raga: linear-gradient(45deg, $primary-deep-blue 0%, $secondary-teal 50%, $primary-gold 100%);
-$gradient-sunset: linear-gradient(180deg, $secondary-amber 0%, $primary-saffron 50%, $primary-burgundy 100%);
-$gradient-dawn: linear-gradient(90deg, $secondary-ivory 0%, $secondary-rose 50%, $primary-gold 100%);
+// Accent Colors - Subtle luxury touches
+$accent-gold: #b8860b;          // Muted gold - luxury accent
+$accent-copper: #cd7f32;        // Copper - warm sophistication
+$accent-emerald: #2e7d32;       // Emerald - success and growth
+$accent-sapphire: #1565c0;      // Sapphire - depth and trust
+
+// Gradient Colors - Premium effects
+$gradient-professional: linear-gradient(135deg, $primary-navy 0%, $primary-charcoal 50%, $primary-slate 100%);
+$gradient-luxury: linear-gradient(45deg, $primary-midnight 0%, $primary-navy 50%, $accent-sapphire 100%);
+$gradient-elegant: linear-gradient(180deg, $secondary-pearl 0%, $secondary-platinum 50%, $secondary-silver 100%);
+$gradient-sophisticated: linear-gradient(90deg, $primary-charcoal 0%, $secondary-graphite 50%, $accent-gold 100%);
 
 // Neutral Colors
-$neutral-charcoal: #2C2C2C;
-$neutral-smoke: #696969;
-$neutral-pearl: #F5F5F5;
-$neutral-snow: #FAFAFA;
+$neutral-charcoal: #212121;
+$neutral-smoke: #757575;
+$neutral-pearl: #f8f9fa;
+$neutral-snow: #ffffff;
 
 // Text Colors
 $text-primary: $neutral-charcoal;
 $text-secondary: $neutral-smoke;
-$text-light: #FFFFFF;
-$text-accent: $primary-burgundy;
+$text-light: #ffffff;
+$text-accent: $accent-gold;
 
 // Background Colors
 $bg-primary: $neutral-snow;
 $bg-secondary: $neutral-pearl;
 $bg-dark: $neutral-charcoal;
-$bg-overlay: rgba(0, 0, 0, 0.7);
+$bg-overlay: rgba(0, 0, 0, 0.8);
 
-// Typography - Classical and modern fonts
-$font-classical: 'Cinzel', serif;
-$font-devanagari: 'Noto Sans Devanagari', sans-serif;
-$font-elegant: 'Playfair Display', serif;
-$font-modern: 'Inter', sans-serif;
+// Typography - Premium and professional fonts
+$font-primary: 'Poppins', sans-serif;      // Modern and clean
+$font-secondary: 'Inter', sans-serif;       // Readable and professional
+$font-elegant: 'Playfair Display', serif;   // Elegant for headings
+$font-modern: 'Source Sans Pro', sans-serif; // Clean and versatile
 
-// Font Sizes - Based on classical proportions
+// Font Sizes - Professional scale
 $font-size-xs: 0.75rem;    // 12px
 $font-size-sm: 0.875rem;   // 14px
 $font-size-base: 1rem;     // 16px

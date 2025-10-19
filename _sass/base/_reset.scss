@@ -1,0 +1,78 @@
+// Reset and Base Styles for Classical Theme
+
+// Modern CSS Reset
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+// Base Layout
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-spacing;
+}
+
+// Classical Theme Body
+.classical-theme {
+  background: $bg-primary;
+  color: $text-primary;
+  overflow-x: hidden;
+  
+  // Musical ambient effects
+  .raga-ambience {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+    
+    .musical-particles {
+      @include floating-notes;
+    }
+    
+    .taal-rhythm {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      @include taal-pulse(3s);
+    }
+  }
+}

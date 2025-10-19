@@ -1,4 +1,7 @@
-// Typography for Bharatiya Shastriya Sangeet Theme
+// Typography System for Premium Professional Singer Profile
+
+// Import professional fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
 
 // Base Typography Settings
 * {
@@ -13,12 +16,40 @@ html {
 }
 
 body {
-  @include modern-text;
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: 1.6;
   color: $text-primary;
   background-color: $bg-primary;
-  line-height: 1.6;
   margin: 0;
   padding: 0;
+}
+
+// Professional heading mixins
+@mixin professional-heading($size) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: $text-primary;
+}
+
+@mixin elegant-heading($size) {
+  font-family: $font-elegant;
+  font-size: $size;
+  font-weight: $font-weight-medium;
+  line-height: 1.3;
+  color: $text-primary;
+}
+
+@mixin modern-text($size) {
+  font-family: $font-secondary;
+  font-size: $size;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-secondary;
 }
 
 // Headings
@@ -30,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include classical-heading($font-size-5xl);
+  @include professional-heading($font-size-5xl);
   
   @include mobile {
     font-size: $font-size-4xl;
@@ -38,7 +69,7 @@ h1 {
 }
 
 h2 {
-  @include classical-heading($font-size-4xl);
+  @include professional-heading($font-size-4xl);
   
   @include mobile {
     font-size: $font-size-3xl;
@@ -46,8 +77,7 @@ h2 {
 }
 
 h3 {
-  @include elegant-text($font-size-3xl);
-  font-weight: $font-weight-semibold;
+  @include professional-heading($font-size-3xl);
   
   @include mobile {
     font-size: $font-size-2xl;
@@ -55,8 +85,7 @@ h3 {
 }
 
 h4 {
-  @include elegant-text($font-size-2xl);
-  font-weight: $font-weight-medium;
+  @include professional-heading($font-size-2xl);
   
   @include mobile {
     font-size: $font-size-xl;
@@ -64,8 +93,7 @@ h4 {
 }
 
 h5 {
-  @include modern-text($font-size-xl);
-  font-weight: $font-weight-medium;
+  @include professional-heading($font-size-xl);
   
   @include mobile {
     font-size: $font-size-lg;
@@ -73,288 +101,92 @@ h5 {
 }
 
 h6 {
-  @include modern-text($font-size-lg);
-  font-weight: $font-weight-medium;
+  @include professional-heading($font-size-lg);
   
   @include mobile {
     font-size: $font-size-base;
   }
 }
 
-// Paragraphs and Text
+// Text elements
 p {
+  @include modern-text($font-size-base);
   margin: 0 0 $spacing-md 0;
-  @include modern-text;
   
   &.lead {
-    @include elegant-text($font-size-xl);
-    color: $text-secondary;
-    margin-bottom: $spacing-lg;
+    @include modern-text($font-size-lg);
+    font-weight: $font-weight-medium;
+    color: $text-primary;
   }
   
-  &.small {
-    font-size: $font-size-sm;
+  &.subtitle {
+    @include elegant-heading($font-size-xl);
     color: $text-secondary;
   }
 }
 
 // Links
 a {
-  color: $primary-gold;
+  color: $accent-sapphire;
   text-decoration: none;
-  transition: color $transition-smooth;
+  transition: $transition-smooth;
   
   &:hover {
-    color: $primary-burgundy;
+    color: $accent-gold;
     text-decoration: underline;
   }
   
   &:focus {
-    outline: 2px solid $primary-gold;
+    outline: 2px solid $accent-sapphire;
     outline-offset: 2px;
+  }
+}
+
+// Professional text classes
+.hero-title {
+  @include elegant-heading($font-size-6xl);
+  font-weight: $font-weight-bold;
+  line-height: 1.1;
+  background: $gradient-professional;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @include mobile {
+    font-size: $font-size-4xl;
+  }
+}
+
+.section-title {
+  @include professional-heading($font-size-3xl);
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -#{$spacing-md};
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: $gradient-luxury;
     border-radius: $border-radius-sm;
   }
 }
 
-// Lists
-ul, ol {
-  margin: 0 0 $spacing-md 0;
-  padding-left: $spacing-xl;
-  
-  li {
-    margin-bottom: $spacing-sm;
-    @include modern-text;
-  }
-}
-
-ul {
-  list-style-type: none;
-  
-  li {
-    position: relative;
-    
-    &::before {
-      content: '♪';
-      color: $primary-gold;
-      font-weight: bold;
-      position: absolute;
-      left: -$spacing-lg;
-    }
-  }
-}
-
-// Blockquotes
-blockquote {
-  margin: $spacing-xl 0;
-  padding: $spacing-lg $spacing-xl;
-  background: linear-gradient(
-    135deg,
-    rgba($primary-gold, 0.1) 0%,
-    rgba($primary-saffron, 0.05) 100%
-  );
-  border-left: 4px solid $primary-gold;
-  border-radius: $border-radius-md;
-  position: relative;
-  
-  &::before {
-    content: '"';
-    font-size: $font-size-6xl;
-    color: $primary-gold;
-    position: absolute;
-    top: -$spacing-md;
-    left: $spacing-md;
-    opacity: 0.3;
-    font-family: $font-classical;
-  }
-  
-  p {
-    @include elegant-text($font-size-lg);
-    font-style: italic;
-    margin-bottom: $spacing-md;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  cite {
-    display: block;
-    text-align: right;
-    @include modern-text($font-size-sm);
-    color: $text-secondary;
-    margin-top: $spacing-md;
-    
-    &::before {
-      content: '— ';
-    }
-  }
-  
-  &.sanskrit-quote {
-    @include devanagari-text($font-size-xl);
-    text-align: center;
-    font-weight: $font-weight-medium;
-    
-    p {
-      font-family: $font-devanagari;
-      font-style: normal;
-      line-height: 1.8;
-    }
-  }
-}
-
-// Code and Pre
-code {
-  background: rgba($neutral-smoke, 0.1);
-  padding: $spacing-xs $spacing-sm;
-  border-radius: $border-radius-sm;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: $font-size-sm;
-  color: $primary-burgundy;
-}
-
-pre {
-  background: $neutral-charcoal;
-  color: $text-light;
-  padding: $spacing-lg;
-  border-radius: $border-radius-md;
-  overflow-x: auto;
-  margin: $spacing-lg 0;
-  
-  code {
-    background: none;
-    padding: 0;
-    color: inherit;
-  }
-}
-
-// Special Typography Classes
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.text-primary { color: $text-primary; }
-.text-secondary { color: $text-secondary; }
-.text-light { color: $text-light; }
-.text-accent { color: $text-accent; }
-.text-gold { color: $primary-gold; }
-.text-saffron { color: $primary-saffron; }
-
-// Classical Text Elements
-.artist-name {
-  @include classical-heading;
-  @include text-gradient($gradient-divine);
-  margin: 0;
-}
-
-.raga-name {
-  @include devanagari-text($font-size-2xl);
-  font-weight: $font-weight-bold;
-  color: $primary-burgundy;
-  text-align: center;
-  margin: $spacing-md 0;
-  
-  &::before, &::after {
-    content: '♪';
-    color: $primary-gold;
-    margin: 0 $spacing-sm;
-    font-size: $font-size-lg;
-  }
-}
-
-.sanskrit-text {
-  @include devanagari-text;
-  font-weight: $font-weight-medium;
-  line-height: 1.8;
-  text-align: center;
-  color: $primary-burgundy;
-}
-
-.classical-subtitle {
-  @include elegant-text($font-size-lg);
+.professional-subtitle {
+  @include elegant-heading($font-size-xl);
   color: $text-secondary;
-  font-style: italic;
+  margin-bottom: $spacing-lg;
   text-align: center;
-  margin: $spacing-sm 0 $spacing-lg 0;
 }
 
-.tagline {
-  @include devanagari-text($font-size-sm);
-  color: $primary-gold;
-  font-weight: $font-weight-medium;
-  letter-spacing: 0.05em;
-}
-
-// Musical Notation
-.swar-sequence {
-  display: flex;
-  justify-content: center;
-  gap: $spacing-md;
-  margin: $spacing-lg 0;
-  
-  .swar {
-    @include devanagari-text($font-size-xl);
-    font-weight: $font-weight-bold;
-    color: $primary-burgundy;
-    background: linear-gradient(135deg, rgba($primary-gold, 0.1), rgba($primary-saffron, 0.1));
-    padding: $spacing-sm $spacing-md;
-    border-radius: $border-radius-md;
-    border: 2px solid rgba($primary-gold, 0.3);
-    transition: all $transition-smooth;
-    
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: $shadow-md;
-      background: rgba($primary-gold, 0.2);
-    }
-  }
-}
-
-// Quote Attribution
-.quote-translation {
-  @include elegant-text($font-size-sm);
-  color: $text-secondary;
-  font-style: italic;
-  text-align: center;
-  margin: $spacing-sm 0 $spacing-lg 0;
-  opacity: 0.8;
-}
-
-// Responsive Typography
-@include mobile {
-  h1, h2, h3, h4, h5, h6 {
-    margin-bottom: $spacing-md;
-  }
-  
-  .swar-sequence {
-    flex-wrap: wrap;
-    gap: $spacing-sm;
-    
-    .swar {
-      font-size: $font-size-lg;
-      padding: $spacing-xs $spacing-sm;
-    }
-  }
-}
-
-// Print Styles
-@media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  
-  a, a:visited {
-    text-decoration: underline;
-  }
-  
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
-  }
-}
+// Text colors
+.text-primary { color: $text-primary !important; }
+.text-secondary { color: $text-secondary !important; }
+.text-light { color: $text-light !important; }
+.text-accent { color: $text-accent !important; }
+.text-gold { color: $accent-gold !important; }
+.text-navy { color: $primary-navy !important; }

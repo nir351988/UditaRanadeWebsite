@@ -1,0 +1,325 @@
+// Responsive Utilities and Media Query Helpers
+
+// Show/hide at different breakpoints
+@include mobile {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: block !important; }
+  .show-mobile-flex { display: flex !important; }
+  .show-mobile-grid { display: grid !important; }
+}
+
+@include tablet {
+  .hide-tablet { display: none !important; }
+  .show-tablet { display: block !important; }
+  .show-tablet-flex { display: flex !important; }
+  .show-tablet-grid { display: grid !important; }
+}
+
+@include desktop {
+  .hide-desktop { display: none !important; }
+  .show-desktop { display: block !important; }
+  .show-desktop-flex { display: flex !important; }
+  .show-desktop-grid { display: grid !important; }
+}
+
+// Default show classes
+.show-mobile,
+.show-tablet,
+.show-desktop { display: none !important; }
+
+// Responsive text alignment
+@include mobile {
+  .text-mobile-left { text-align: left !important; }
+  .text-mobile-center { text-align: center !important; }
+  .text-mobile-right { text-align: right !important; }
+}
+
+@include tablet {
+  .text-tablet-left { text-align: left !important; }
+  .text-tablet-center { text-align: center !important; }
+  .text-tablet-right { text-align: right !important; }
+}
+
+@include desktop {
+  .text-desktop-left { text-align: left !important; }
+  .text-desktop-center { text-align: center !important; }
+  .text-desktop-right { text-align: right !important; }
+}
+
+// Responsive spacing
+@include mobile {
+  @each $name, $size in $spacing-map {
+    .m-mobile-#{$name} { margin: $size !important; }
+    .mt-mobile-#{$name} { margin-top: $size !important; }
+    .mr-mobile-#{$name} { margin-right: $size !important; }
+    .mb-mobile-#{$name} { margin-bottom: $size !important; }
+    .ml-mobile-#{$name} { margin-left: $size !important; }
+    .mx-mobile-#{$name} { 
+      margin-left: $size !important; 
+      margin-right: $size !important; 
+    }
+    .my-mobile-#{$name} { 
+      margin-top: $size !important; 
+      margin-bottom: $size !important; 
+    }
+    
+    .p-mobile-#{$name} { padding: $size !important; }
+    .pt-mobile-#{$name} { padding-top: $size !important; }
+    .pr-mobile-#{$name} { padding-right: $size !important; }
+    .pb-mobile-#{$name} { padding-bottom: $size !important; }
+    .pl-mobile-#{$name} { padding-left: $size !important; }
+    .px-mobile-#{$name} { 
+      padding-left: $size !important; 
+      padding-right: $size !important; 
+    }
+    .py-mobile-#{$name} { 
+      padding-top: $size !important; 
+      padding-bottom: $size !important; 
+    }
+  }
+}
+
+@include tablet {
+  @each $name, $size in $spacing-map {
+    .m-tablet-#{$name} { margin: $size !important; }
+    .mt-tablet-#{$name} { margin-top: $size !important; }
+    .mr-tablet-#{$name} { margin-right: $size !important; }
+    .mb-tablet-#{$name} { margin-bottom: $size !important; }
+    .ml-tablet-#{$name} { margin-left: $size !important; }
+    .mx-tablet-#{$name} { 
+      margin-left: $size !important; 
+      margin-right: $size !important; 
+    }
+    .my-tablet-#{$name} { 
+      margin-top: $size !important; 
+      margin-bottom: $size !important; 
+    }
+    
+    .p-tablet-#{$name} { padding: $size !important; }
+    .pt-tablet-#{$name} { padding-top: $size !important; }
+    .pr-tablet-#{$name} { padding-right: $size !important; }
+    .pb-tablet-#{$name} { padding-bottom: $size !important; }
+    .pl-tablet-#{$name} { padding-left: $size !important; }
+    .px-tablet-#{$name} { 
+      padding-left: $size !important; 
+      padding-right: $size !important; 
+    }
+    .py-tablet-#{$name} { 
+      padding-top: $size !important; 
+      padding-bottom: $size !important; 
+    }
+  }
+}
+
+// Responsive flexbox
+@include mobile {
+  .flex-mobile-row { flex-direction: row !important; }
+  .flex-mobile-column { flex-direction: column !important; }
+  .justify-mobile-start { justify-content: flex-start !important; }
+  .justify-mobile-center { justify-content: center !important; }
+  .justify-mobile-end { justify-content: flex-end !important; }
+  .justify-mobile-between { justify-content: space-between !important; }
+  .align-mobile-start { align-items: flex-start !important; }
+  .align-mobile-center { align-items: center !important; }
+  .align-mobile-end { align-items: flex-end !important; }
+}
+
+@include tablet {
+  .flex-tablet-row { flex-direction: row !important; }
+  .flex-tablet-column { flex-direction: column !important; }
+  .justify-tablet-start { justify-content: flex-start !important; }
+  .justify-tablet-center { justify-content: center !important; }
+  .justify-tablet-end { justify-content: flex-end !important; }
+  .justify-tablet-between { justify-content: space-between !important; }
+  .align-tablet-start { align-items: flex-start !important; }
+  .align-tablet-center { align-items: center !important; }
+  .align-tablet-end { align-items: flex-end !important; }
+}
+
+// Responsive grid
+@include mobile {
+  .grid-mobile-1 { grid-template-columns: repeat(1, 1fr) !important; }
+  .grid-mobile-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-mobile-auto { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important; }
+}
+
+@include tablet {
+  .grid-tablet-1 { grid-template-columns: repeat(1, 1fr) !important; }
+  .grid-tablet-2 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-tablet-3 { grid-template-columns: repeat(3, 1fr) !important; }
+  .grid-tablet-auto { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; }
+}
+
+// Font size responsive utilities
+@include mobile {
+  .text-mobile-xs { font-size: $font-size-xs !important; }
+  .text-mobile-sm { font-size: $font-size-sm !important; }
+  .text-mobile-base { font-size: $font-size-md !important; }
+  .text-mobile-lg { font-size: $font-size-lg !important; }
+  .text-mobile-xl { font-size: $font-size-xl !important; }
+  .text-mobile-2xl { font-size: $font-size-2xl !important; }
+  .text-mobile-3xl { font-size: $font-size-3xl !important; }
+}
+
+@include tablet {
+  .text-tablet-xs { font-size: $font-size-xs !important; }
+  .text-tablet-sm { font-size: $font-size-sm !important; }
+  .text-tablet-base { font-size: $font-size-md !important; }
+  .text-tablet-lg { font-size: $font-size-lg !important; }
+  .text-tablet-xl { font-size: $font-size-xl !important; }
+  .text-tablet-2xl { font-size: $font-size-2xl !important; }
+  .text-tablet-3xl { font-size: $font-size-3xl !important; }
+}
+
+// Container responsive utilities
+.container-responsive {
+  @include container;
+  
+  &.container-narrow {
+    @include desktop {
+      max-width: 800px;
+    }
+  }
+  
+  &.container-wide {
+    @include desktop {
+      max-width: 1400px;
+    }
+  }
+}
+
+// Classical music responsive adjustments
+@include mobile {
+  .raga-showcase {
+    .raga-info {
+      order: 2 !important;
+    }
+    
+    .raga-content {
+      order: 1 !important;
+    }
+  }
+  
+  .performance-timeline {
+    padding-left: $spacing-lg !important;
+    
+    &::before {
+      left: $spacing-sm !important;
+    }
+    
+    .timeline-item::before {
+      left: -#{$spacing-md + $spacing-xs} !important;
+    }
+  }
+  
+  .two-column-layout {
+    grid-template-columns: 1fr !important;
+    gap: $spacing-xl !important;
+  }
+  
+  .three-column-layout {
+    grid-template-columns: 1fr !important;
+    gap: $spacing-xl !important;
+    
+    .main-column {
+      order: 1 !important;
+    }
+    
+    .sidebar.left {
+      order: 0 !important;
+    }
+    
+    .sidebar.right {
+      order: 2 !important;
+    }
+  }
+  
+  .hero.classical-hero {
+    .hero-main {
+      grid-template-columns: 1fr !important;
+      gap: $spacing-2xl !important;
+      text-align: center !important;
+    }
+    
+    .hero-title {
+      .title-main {
+        font-size: $font-size-4xl !important;
+      }
+      
+      .title-subtitle {
+        font-size: $font-size-lg !important;
+      }
+    }
+    
+    .hero-description {
+      font-size: $font-size-lg !important;
+    }
+    
+    .hero-actions {
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    
+    .hero-specializations {
+      justify-content: center !important;
+    }
+  }
+}
+
+@include tablet {
+  .card-grid {
+    &.grid-3,
+    &.grid-4 {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+  
+  .section-header {
+    .section-title {
+      font-size: $font-size-3xl !important;
+    }
+  }
+  
+  .footer-main {
+    .footer-content {
+      grid-template-columns: 1fr 1fr !important;
+      gap: $spacing-xl !important;
+    }
+  }
+}
+
+// Reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .animate-raga-flow,
+  .animate-taal-pulse,
+  .raga-waves,
+  .taal-circles,
+  .musical-aura {
+    animation: none !important;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .card,
+  .btn,
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border-width: 2px !important;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    outline: 3px solid currentColor !important;
+    outline-offset: 2px !important;
+  }
+}

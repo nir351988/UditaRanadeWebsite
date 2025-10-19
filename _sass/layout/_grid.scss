@@ -1,0 +1,245 @@
+// Grid System for Classical Layout
+
+.container {
+  @include container;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @include mobile {
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -#{$spacing-md};
+  margin-right: -#{$spacing-md};
+  
+  &.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+    
+    .col {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  &.align-center {
+    align-items: center;
+  }
+  
+  &.align-start {
+    align-items: flex-start;
+  }
+  
+  &.align-end {
+    align-items: flex-end;
+  }
+  
+  &.justify-center {
+    justify-content: center;
+  }
+  
+  &.justify-between {
+    justify-content: space-between;
+  }
+  
+  &.justify-around {
+    justify-content: space-around;
+  }
+}
+
+.col {
+  flex: 1;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+  
+  &.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+// Grid columns
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 (100% / 12) * $i;
+    max-width: (100% / 12) * $i;
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+}
+
+// Responsive grid
+@include tablet {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      flex: 0 0 (100% / 12) * $i;
+      max-width: (100% / 12) * $i;
+    }
+  }
+  
+  .col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+@include mobile {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      flex: 0 0 (100% / 12) * $i;
+      max-width: (100% / 12) * $i;
+    }
+  }
+  
+  .col-sm-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  
+  // Mobile-first: full width by default
+  .col,
+  [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+// CSS Grid System
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+  
+  &.grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  &.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+    
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.grid-12 {
+    grid-template-columns: repeat(12, 1fr);
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  &.gap-sm {
+    gap: $spacing-sm;
+  }
+  
+  &.gap-md {
+    gap: $spacing-md;
+  }
+  
+  &.gap-lg {
+    gap: $spacing-lg;
+  }
+  
+  &.gap-xl {
+    gap: $spacing-xl;
+  }
+  
+  &.gap-2xl {
+    gap: $spacing-2xl;
+  }
+}
+
+// Grid items
+.grid-item {
+  &.span-2 {
+    grid-column: span 2;
+    
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+  
+  &.span-3 {
+    grid-column: span 3;
+    
+    @include tablet {
+      grid-column: span 2;
+    }
+    
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+  
+  &.span-4 {
+    grid-column: span 4;
+    
+    @include tablet {
+      grid-column: span 2;
+    }
+    
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+  
+  &.span-6 {
+    grid-column: span 6;
+    
+    @include tablet {
+      grid-column: span 3;
+    }
+    
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+  
+  &.span-12 {
+    grid-column: span 12;
+  }
+  
+  &.row-span-2 {
+    grid-row: span 2;
+  }
+  
+  &.row-span-3 {
+    grid-row: span 3;
+  }
+}

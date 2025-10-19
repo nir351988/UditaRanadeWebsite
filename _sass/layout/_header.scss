@@ -1,0 +1,272 @@
+// Header Styles for Classical Navigation
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  background: rgba($surface-light, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($text-primary, 0.1);
+  z-index: $z-header;
+  transition: $transition-smooth;
+  
+  &.scrolled {
+    background: rgba($surface-light, 0.98);
+    box-shadow: $shadow-lg;
+    
+    .header-content {
+      padding: $spacing-sm 0;
+    }
+  }
+  
+  &.transparent {
+    background: transparent;
+    border-bottom: 1px solid rgba($text-light, 0.2);
+    
+    .logo .logo-text {
+      color: $text-light;
+    }
+    
+    .nav-link {
+      color: rgba($text-light, 0.9);
+      
+      &:hover {
+        color: $text-light;
+      }
+    }
+  }
+  
+  .header-content {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: $spacing-md 0;
+    transition: $transition-smooth;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    
+    .logo-icon {
+      font-size: $font-size-xl;
+      color: $primary-saffron;
+      margin-right: $spacing-sm;
+    }
+    
+    .logo-text {
+      @include classical-heading($font-size-lg);
+      color: $text-primary;
+      transition: $transition-smooth;
+      
+      .logo-main {
+        display: block;
+        line-height: 1;
+      }
+      
+      .logo-subtitle {
+        @include devanagari-text($font-size-xs);
+        color: rgba($text-primary, 0.7);
+        font-weight: $font-weight-normal;
+        display: block;
+        line-height: 1;
+        margin-top: 2px;
+      }
+    }
+    
+    &:hover {
+      .logo-text {
+        color: $primary-saffron;
+      }
+    }
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    
+    @include mobile {
+      gap: $spacing-md;
+    }
+  }
+  
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $text-primary;
+    font-size: $font-size-xl;
+    cursor: pointer;
+    padding: $spacing-sm;
+    
+    @include mobile {
+      display: block;
+    }
+    
+    &:hover {
+      color: $primary-saffron;
+    }
+  }
+}
+
+// Mobile menu overlay
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: $z-overlay;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-smooth;
+  
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @include tablet-up {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  background: $surface-light;
+  z-index: $z-modal;
+  transform: translateX(100%);
+  transition: $transition-smooth;
+  overflow-y: auto;
+  
+  &.show {
+    transform: translateX(0);
+  }
+  
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-lg;
+    border-bottom: 1px solid rgba($text-primary, 0.1);
+    
+    .mobile-menu-title {
+      @include classical-heading($font-size-lg);
+      color: $text-primary;
+    }
+    
+    .mobile-menu-close {
+      background: none;
+      border: none;
+      color: $text-primary;
+      font-size: $font-size-xl;
+      cursor: pointer;
+      padding: $spacing-sm;
+      
+      &:hover {
+        color: $primary-saffron;
+      }
+    }
+  }
+  
+  .mobile-menu-content {
+    padding: $spacing-lg;
+    
+    .mobile-nav {
+      .nav-item {
+        margin-bottom: $spacing-sm;
+        
+        .nav-link {
+          display: block;
+          padding: $spacing-md $spacing-lg;
+          color: $text-primary;
+          text-decoration: none;
+          border-radius: $border-radius-md;
+          transition: $transition-smooth;
+          
+          &:hover,
+          &.active {
+            background: rgba($primary-saffron, 0.1);
+            color: $primary-saffron;
+          }
+        }
+        
+        &.has-submenu {
+          .nav-link {
+            position: relative;
+            
+            &::after {
+              content: '▼';
+              position: absolute;
+              right: $spacing-lg;
+              font-size: $font-size-xs;
+              transition: $transition-smooth;
+            }
+            
+            &.expanded::after {
+              transform: rotate(180deg);
+            }
+          }
+          
+          .submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: $transition-smooth;
+            
+            &.show {
+              max-height: 300px;
+            }
+            
+            .nav-link {
+              padding-left: $spacing-2xl;
+              font-size: $font-size-sm;
+              color: rgba($text-primary, 0.8);
+            }
+          }
+        }
+      }
+    }
+    
+    .mobile-menu-footer {
+      margin-top: $spacing-2xl;
+      padding-top: $spacing-2xl;
+      border-top: 1px solid rgba($text-primary, 0.1);
+      
+      .social-links {
+        display: flex;
+        gap: $spacing-md;
+        justify-content: center;
+        
+        .social-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: rgba($primary-saffron, 0.1);
+          color: $text-primary;
+          border-radius: 50%;
+          text-decoration: none;
+          transition: $transition-smooth;
+          
+          &:hover {
+            background: $primary-saffron;
+            color: $text-light;
+          }
+        }
+      }
+    }
+  }
+  
+  @include tablet-up {
+    display: none;
+  }
+}

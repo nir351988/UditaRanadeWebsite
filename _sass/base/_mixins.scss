@@ -1,4 +1,4 @@
-// Mixins for Bharatiya Shastriya Sangeet Theme
+// Mixins for Premium Professional Singer Profile
 
 // Responsive Breakpoints
 @mixin mobile {
@@ -9,6 +9,12 @@
 
 @mixin tablet {
   @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: #{$breakpoint-sm}) {
     @content;
   }
 }
@@ -25,215 +31,9 @@
   }
 }
 
-// Classical Music Inspired Animations
-@mixin raga-flow($duration: $animation-normal) {
-  animation: raga-flow $duration ease-in-out infinite alternate;
-}
-
-@keyframes raga-flow {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-10px) scale(1.02);
-    opacity: 1;
-  }
-}
-
-@mixin taal-pulse($duration: 2s) {
-  animation: taal-pulse $duration ease-in-out infinite;
-}
-
-@keyframes taal-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
-
-@mixin musical-notes-float {
-  animation: musical-float 6s ease-in-out infinite;
-}
-
-@keyframes musical-float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-20px) rotate(5deg);
-  }
-  75% {
-    transform: translateY(20px) rotate(-5deg);
-  }
-}
-
-// Gradient Mixins
-@mixin divine-gradient($angle: 135deg) {
-  background: linear-gradient($angle, $primary-saffron 0%, $primary-gold 50%, $primary-burgundy 100%);
-}
-
-@mixin raga-gradient($angle: 45deg) {
-  background: linear-gradient($angle, $primary-deep-blue 0%, $secondary-teal 50%, $primary-gold 100%);
-}
-
-@mixin sunset-gradient($angle: 180deg) {
-  background: linear-gradient($angle, $secondary-amber 0%, $primary-saffron 50%, $primary-burgundy 100%);
-}
-
-@mixin text-gradient($gradient) {
-  background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-// Typography Mixins
-@mixin classical-heading($size: $font-size-3xl) {
-  font-family: $font-classical;
-  font-size: $size;
-  font-weight: $font-weight-semibold;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-}
-
-@mixin devanagari-text($size: $font-size-base) {
-  font-family: $font-devanagari;
-  font-size: $size;
-  font-weight: $font-weight-normal;
-  line-height: 1.6;
-}
-
-@mixin elegant-text($size: $font-size-lg) {
-  font-family: $font-elegant;
-  font-size: $size;
-  font-weight: $font-weight-normal;
-  line-height: 1.5;
-}
-
-@mixin modern-text($size: $font-size-base) {
-  font-family: $font-modern;
-  font-size: $size;
-  font-weight: $font-weight-normal;
-  line-height: 1.6;
-}
-
-// Card Mixins
-@mixin classical-card {
-  background: $card-background;
-  border: 1px solid $card-border;
-  border-radius: $card-radius;
-  box-shadow: $card-shadow;
-  padding: $spacing-xl;
-  transition: transform $transition-smooth, box-shadow $transition-smooth;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: $shadow-lg;
-  }
-}
-
-@mixin raga-card($raga-color: $primary-gold) {
-  @include classical-card;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: $raga-color;
-    border-radius: $border-radius-sm $border-radius-sm 0 0;
-  }
-}
-
-// Button Mixins
-@mixin btn-base {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: $spacing-sm;
-  padding: $spacing-md $spacing-xl;
-  border: none;
-  border-radius: $border-radius-lg;
-  font-family: $font-modern;
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: all $transition-smooth;
-  position: relative;
-  overflow: hidden;
-  
-  &:focus {
-    outline: 2px solid $primary-gold;
-    outline-offset: 2px;
-  }
-  
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-}
-
-@mixin btn-primary {
-  @include btn-base;
-  @include divine-gradient;
-  color: $text-light;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: $shadow-lg;
-  }
-  
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-@mixin btn-secondary {
-  @include btn-base;
-  background: transparent;
-  border: 2px solid $primary-gold;
-  color: $primary-gold;
-  
-  &:hover {
-    background: $primary-gold;
-    color: $text-light;
-  }
-}
-
-// Form Mixins
-@mixin input-base {
-  width: 100%;
-  padding: $input-padding;
-  background: $input-background;
-  border: 2px solid $input-border-color;
-  border-radius: $border-radius-md;
-  font-family: $font-modern;
-  font-size: $font-size-base;
-  transition: border-color $transition-smooth, box-shadow $transition-smooth;
-  
-  &:focus {
-    outline: none;
-    border-color: $input-border-focus;
-    box-shadow: 0 0 0 3px rgba($primary-gold, 0.1);
-  }
-  
-  &::placeholder {
-    color: rgba($text-secondary, 0.7);
-  }
-}
-
-// Layout Mixins
-@mixin container($max-width: $breakpoint-lg) {
-  width: 100%;
-  max-width: $max-width;
+// Container and layout mixins
+@mixin container {
+  max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 $spacing-lg;
   
@@ -242,119 +42,220 @@
   }
 }
 
-@mixin section-spacing {
-  padding: $section-padding 0;
+// Professional card styling
+@mixin professional-card {
+  background: $bg-secondary;
+  border: 1px solid rgba($neutral-smoke, 0.2);
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  transition: $transition-smooth;
   
-  @include mobile {
-    padding: $section-padding-mobile 0;
+  &:hover {
+    box-shadow: $shadow-xl;
+    transform: translateY(-2px);
   }
 }
 
-// Classical Decoration Mixins
-@mixin om-symbol($size: 2rem, $color: $primary-saffron) {
-  &::before {
-    content: 'ॐ';
-    font-size: $size;
-    color: $color;
-    display: block;
-    text-align: center;
-    margin-bottom: $spacing-md;
-  }
+// Premium gradient mixins
+@mixin premium-gradient($direction: 135deg) {
+  background: linear-gradient(
+    $direction,
+    $primary-navy 0%,
+    $primary-charcoal 50%,
+    $primary-slate 100%
+  );
 }
 
-@mixin musical-staff-bg {
-  position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 19px,
-        rgba($neutral-smoke, 0.1) 20px
-      );
-    pointer-events: none;
-    z-index: -1;
-  }
+@mixin luxury-gradient($direction: 45deg) {
+  background: linear-gradient(
+    $direction,
+    $primary-midnight 0%,
+    $primary-navy 50%,
+    $accent-sapphire 100%
+  );
 }
 
-@mixin floating-notes($count: 5) {
-  position: relative;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: 
-      radial-gradient(circle at 20% 30%, transparent 2px, rgba($primary-gold, 0.1) 3px),
-      radial-gradient(circle at 80% 70%, transparent 2px, rgba($primary-saffron, 0.1) 3px),
-      radial-gradient(circle at 60% 20%, transparent 2px, rgba($secondary-teal, 0.1) 3px);
-    animation: float-notes 10s ease-in-out infinite;
-    pointer-events: none;
-  }
+@mixin elegant-gradient($direction: 180deg) {
+  background: linear-gradient(
+    $direction,
+    $secondary-pearl 0%,
+    $secondary-platinum 50%,
+    $secondary-silver 100%
+  );
 }
 
-@keyframes float-notes {
-  0%, 100% {
+// Professional Animations
+@mixin smooth-rise($duration: 0.6s) {
+  animation: smooth-rise $duration ease-out;
+}
+
+@keyframes smooth-rise {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
     transform: translateY(0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(-20px);
-    opacity: 0.6;
+    opacity: 1;
   }
 }
 
-// Utility Mixins
-@mixin visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-@mixin aspect-ratio($width, $height) {
-  position: relative;
+@mixin elegant-hover($duration: 0.3s) {
+  transition: all $duration ease;
   
-  &::before {
-    content: '';
-    width: 1px;
-    margin-left: -1px;
-    float: left;
-    height: 0;
-    padding-top: ($height / $width) * 100%;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+  }
+}
+
+@mixin fade-in($duration: 0.5s, $delay: 0s) {
+  animation: fade-in $duration ease-out $delay both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin slide-up($duration: 0.6s, $delay: 0s) {
+  animation: slide-up $duration ease-out $delay both;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Button mixins
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-xl;
+  border: none;
+  border-radius: $border-radius-md;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition-smooth;
+  
+  &:focus {
+    outline: 2px solid $accent-sapphire;
+    outline-offset: 2px;
   }
   
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
-@mixin truncate-text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+@mixin button-primary {
+  @include button-base;
+  @include premium-gradient;
+  color: $text-light;
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
 }
 
-@mixin line-clamp($lines: 3) {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $lines;
-  overflow: hidden;
+@mixin button-secondary {
+  @include button-base;
+  background: transparent;
+  color: $primary-navy;
+  border: 2px solid $primary-navy;
+  
+  &:hover:not(:disabled) {
+    background: $primary-navy;
+    color: $text-light;
+  }
+}
+
+@mixin button-ghost {
+  @include button-base;
+  background: transparent;
+  color: $accent-gold;
+  border: 1px solid $accent-gold;
+  
+  &:hover:not(:disabled) {
+    background: $accent-gold;
+    color: $text-light;
+  }
+}
+
+// Form mixins
+@mixin form-input {
+  width: 100%;
+  padding: $spacing-md;
+  border: 2px solid rgba($neutral-smoke, 0.3);
+  border-radius: $border-radius-md;
+  background: $bg-primary;
+  color: $text-primary;
+  font-family: $font-secondary;
+  font-size: $font-size-base;
+  transition: $transition-smooth;
+  
+  &:focus {
+    outline: none;
+    border-color: $accent-sapphire;
+    box-shadow: 0 0 0 3px rgba($accent-sapphire, 0.1);
+  }
+  
+  &::placeholder {
+    color: rgba($text-secondary, 0.6);
+  }
+}
+
+// Shadow mixins
+@mixin professional-shadow {
+  box-shadow: 
+    0 4px 6px rgba($neutral-charcoal, 0.1),
+    0 1px 3px rgba($neutral-charcoal, 0.08);
+}
+
+@mixin luxury-shadow {
+  box-shadow: 
+    0 10px 25px rgba($primary-navy, 0.15),
+    0 4px 10px rgba($primary-navy, 0.1);
+}
+
+// Text mixins for professional styling
+@mixin professional-heading($size) {
+  font-family: $font-primary;
+  font-size: $size;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: $text-primary;
+}
+
+@mixin elegant-text($size) {
+  font-family: $font-elegant;
+  font-size: $size;
+  font-weight: $font-weight-normal;
+  line-height: 1.5;
+  color: $text-secondary;
+}
+
+@mixin modern-text($size) {
+  font-family: $font-secondary;
+  font-size: $size;
+  font-weight: $font-weight-normal;
+  line-height: 1.6;
+  color: $text-secondary;
 }

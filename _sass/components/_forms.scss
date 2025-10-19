@@ -1,0 +1,317 @@
+// Form Styles for Classical Theme
+
+.form {
+  @include elegant-card;
+  background: $surface-light;
+  padding: $spacing-2xl;
+  border-radius: $border-radius-lg;
+  
+  &.contact-form {
+    background: linear-gradient(
+      135deg,
+      rgba($primary-saffron, 0.03) 0%,
+      rgba($primary-gold, 0.03) 100%
+    );
+    border: 1px solid rgba($primary-saffron, 0.1);
+  }
+  
+  .form-header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+    
+    .form-title {
+      @include classical-heading($font-size-2xl);
+      color: $text-primary;
+      margin-bottom: $spacing-md;
+    }
+    
+    .form-subtitle {
+      @include elegant-text($font-size-lg);
+      color: rgba($text-primary, 0.7);
+    }
+  }
+  
+  .form-group {
+    margin-bottom: $spacing-xl;
+    
+    .form-label {
+      @include modern-text($font-size-sm);
+      color: $text-primary;
+      font-weight: $font-weight-medium;
+      display: block;
+      margin-bottom: $spacing-sm;
+      
+      .required {
+        color: $accent-burgundy;
+        margin-left: $spacing-xs;
+      }
+    }
+    
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: $spacing-md;
+      border: 2px solid rgba($text-primary, 0.2);
+      border-radius: $border-radius-md;
+      background: $surface-light;
+      color: $text-primary;
+      font-family: $font-modern;
+      font-size: $font-size-sm;
+      transition: $transition-smooth;
+      
+      &:focus {
+        outline: none;
+        border-color: $primary-saffron;
+        box-shadow: 0 0 0 3px rgba($primary-saffron, 0.1);
+        background: rgba($primary-saffron, 0.02);
+      }
+      
+      &:invalid {
+        border-color: $accent-burgundy;
+        
+        &:focus {
+          box-shadow: 0 0 0 3px rgba($accent-burgundy, 0.1);
+        }
+      }
+      
+      &::placeholder {
+        color: rgba($text-primary, 0.5);
+        font-style: italic;
+      }
+    }
+    
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.5;
+    }
+    
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right $spacing-md center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      padding-right: $spacing-2xl;
+      appearance: none;
+    }
+    
+    .form-help {
+      @include modern-text($font-size-xs);
+      color: rgba($text-primary, 0.6);
+      margin-top: $spacing-sm;
+      line-height: 1.4;
+    }
+    
+    .form-error {
+      @include modern-text($font-size-xs);
+      color: $accent-burgundy;
+      margin-top: $spacing-sm;
+      display: none;
+      
+      &.show {
+        display: block;
+      }
+    }
+    
+    &.has-error {
+      .form-input,
+      .form-textarea,
+      .form-select {
+        border-color: $accent-burgundy;
+        background: rgba($accent-burgundy, 0.02);
+      }
+    }
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+    
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+  
+  .form-checkbox,
+  .form-radio {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+    
+    input[type="checkbox"],
+    input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      accent-color: $primary-saffron;
+      
+      &:focus {
+        outline: 2px solid rgba($primary-saffron, 0.3);
+        outline-offset: 2px;
+      }
+    }
+    
+    .checkbox-label,
+    .radio-label {
+      @include modern-text($font-size-sm);
+      color: $text-primary;
+      line-height: 1.4;
+      cursor: pointer;
+      flex: 1;
+    }
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: $spacing-lg;
+    justify-content: center;
+    margin-top: $spacing-2xl;
+    
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  
+  .form-success {
+    @include elegant-card;
+    background: linear-gradient(
+      135deg,
+      rgba($secondary-green, 0.1) 0%,
+      rgba($primary-gold, 0.1) 100%
+    );
+    border: 1px solid rgba($secondary-green, 0.3);
+    padding: $spacing-xl;
+    border-radius: $border-radius-md;
+    text-align: center;
+    margin-top: $spacing-xl;
+    
+    .success-icon {
+      font-size: $font-size-2xl;
+      color: $secondary-green;
+      margin-bottom: $spacing-md;
+    }
+    
+    .success-title {
+      @include classical-heading($font-size-lg);
+      color: $text-primary;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .success-message {
+      @include elegant-text($font-size-sm);
+      color: rgba($text-primary, 0.8);
+    }
+  }
+}
+
+// Newsletter Form
+.newsletter-form {
+  background: linear-gradient(
+    135deg,
+    rgba($primary-gold, 0.1) 0%,
+    rgba($secondary-orange, 0.1) 100%
+  );
+  border: 1px solid rgba($primary-gold, 0.2);
+  padding: $spacing-xl;
+  border-radius: $border-radius-lg;
+  text-align: center;
+  
+  .newsletter-title {
+    @include classical-heading($font-size-xl);
+    color: $text-primary;
+    margin-bottom: $spacing-sm;
+  }
+  
+  .newsletter-description {
+    @include elegant-text($font-size-sm);
+    color: rgba($text-primary, 0.8);
+    margin-bottom: $spacing-xl;
+  }
+  
+  .newsletter-input-group {
+    display: flex;
+    gap: $spacing-md;
+    max-width: 400px;
+    margin: 0 auto;
+    
+    @include mobile {
+      flex-direction: column;
+    }
+    
+    .form-input {
+      flex: 1;
+      margin-bottom: 0;
+    }
+    
+    .btn {
+      white-space: nowrap;
+    }
+  }
+  
+  .newsletter-privacy {
+    @include modern-text($font-size-xs);
+    color: rgba($text-primary, 0.6);
+    margin-top: $spacing-md;
+    
+    a {
+      color: $primary-saffron;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Contact Form Specific Styles
+.contact-form {
+  .subject-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+    
+    .subject-option {
+      @include elegant-card;
+      background: rgba($primary-saffron, 0.05);
+      border: 2px solid rgba($primary-saffron, 0.2);
+      padding: $spacing-lg;
+      border-radius: $border-radius-md;
+      text-align: center;
+      cursor: pointer;
+      transition: $transition-smooth;
+      
+      &:hover {
+        background: rgba($primary-saffron, 0.1);
+        border-color: rgba($primary-saffron, 0.4);
+      }
+      
+      &.selected {
+        background: rgba($primary-saffron, 0.15);
+        border-color: $primary-saffron;
+        
+        .option-icon {
+          color: $primary-saffron;
+        }
+      }
+      
+      .option-icon {
+        font-size: $font-size-xl;
+        color: rgba($text-primary, 0.6);
+        margin-bottom: $spacing-sm;
+        transition: $transition-smooth;
+      }
+      
+      .option-title {
+        @include modern-text($font-size-sm);
+        color: $text-primary;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
