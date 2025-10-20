@@ -11,7 +11,7 @@
     {% endif %}
     
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}Bharatiya Shastriya Sangeet, Indian Classical Music, Udita Ranade, Raga, Tala, Classical Vocalist{% endif %}">
+    <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}Professional Singer, Contemporary Music, Classical Music, Udita Ranade, Vocal Performance, Recording Artist{% endif %}">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -34,7 +34,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -46,21 +46,20 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "MusicGroup",
-        "name": "{{ site.title }}",
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
         "description": "{{ site.description }}",
         "url": "{{ site.url }}{{ site.baseurl }}",
-        "genre": ["Indian Classical Music", "Bharatiya Shastriya Sangeet", "Raga"],
-        "member": {
-            "@type": "Person",
-            "name": "{{ site.author.name }}",
-            "jobTitle": "Classical Vocalist",
-            "description": "{{ site.author.bio }}"
+        "jobTitle": "Professional Singer & Performer",
+        "genre": ["Contemporary", "Classical", "World Music", "Opera"],
+        "performerIn": {
+            "@type": "MusicEvent",
+            "name": "Professional Vocal Performances"
         }
     }
     </script>
 </head>
-<body class="classical-theme">
+<body class="professional-theme">
     <!-- Navigation -->
     {% include navigation.html %}
     
@@ -76,10 +75,10 @@
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script src="{{ site.baseurl }}/assets/js/smooth-scroll.js"></script>
     
-    <!-- Classical Music Ambient Effects (Optional) -->
-    <div class="raga-ambience" aria-hidden="true">
-        <div class="musical-particles"></div>
-        <div class="taal-rhythm"></div>
+    <!-- Professional Performance Analytics (Optional) -->
+    <div class="performance-analytics" aria-hidden="true">
+        <div class="music-visualization"></div>
+        <div class="audience-engagement"></div>
     </div>
 </body>
 </html>
