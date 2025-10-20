@@ -18,8 +18,8 @@ layout: default
                 </p>
                 
                 <div class="hero-specializations">
-                    <span class="specialization">Classical</span>
                     <span class="specialization">Contemporary</span>
+                    <span class="specialization">Classical</span>
                     <span class="specialization">World Music</span>
                     <span class="specialization">Opera</span>
                 </div>
@@ -29,21 +29,21 @@ layout: default
                         <i class="fas fa-calendar-alt"></i>
                         Book Performance
                     </a>
-                    <a href="{{ site.baseurl }}/portfolio/" class="btn btn-secondary">
-                        <i class="fas fa-play-circle"></i>
-                        View Portfolio
+                    <a href="{{ site.baseurl }}/about/" class="btn btn-secondary">
+                        <i class="fas fa-user"></i>
+                        About Me
                     </a>
                 </div>
             </div>
             
             <div class="hero-image">
                 <div class="image-container">
-                    <img src="{{ site.baseurl }}/assets/images/udita-hero.svg" alt="{{ site.author.name }} - Classical Indian Music Vocalist" loading="eager">
+                    <img src="{{ site.baseurl }}/assets/images/udita-hero.svg" alt="{{ site.author.name }} - Professional Singer" loading="eager" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-portrait.jpg'">
                     <div class="image-decorations">
-                        <div class="musical-ornament top-left">❦</div>
-                        <div class="musical-ornament top-right">♪</div>
-                        <div class="musical-ornament bottom-left">♫</div>
-                        <div class="musical-ornament bottom-right">❦</div>
+                        <div class="musical-ornament top-left">♪</div>
+                        <div class="musical-ornament top-right">♫</div>
+                        <div class="musical-ornament bottom-left">♪</div>
+                        <div class="musical-ornament bottom-right">♫</div>
                     </div>
                 </div>
             </div>
@@ -51,41 +51,75 @@ layout: default
     </div>
 </section>
 
-<!-- Raga of the Month -->
-<section class="raga-spotlight">
+<!-- Latest News & Updates -->
+<section class="latest-news">
     <div class="container">
         <div class="section-header">
-            <h2><i class="fas fa-star"></i> Raga of the Month</h2>
-            <p>Discover the beauty and intricacies of selected ragas</p>
+            <h2><i class="fas fa-newspaper"></i> Latest News & Updates</h2>
+            <p>Stay connected with my musical journey and upcoming events</p>
         </div>
         
-        <div class="raga-card featured">
-            <div class="raga-info">
-                <h3>राग यमन</h3>
-                <div class="raga-details">
-                    <span class="detail"><strong>Thaat:</strong> कल्याण</span>
-                    <span class="detail"><strong>Time:</strong> Evening (6-9 PM)</span>
-                    <span class="detail"><strong>Season:</strong> All seasons</span>
-                    <span class="detail"><strong>Mood:</strong> Devotional, Serene</span>
+        <div class="news-grid">
+            <div class="news-card featured">
+                <div class="news-image">
+                    <img src="{{ site.baseurl }}/assets/images/news/featured-performance.svg" alt="Recent Performance" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-landscape.jpg'">
+                    <div class="news-badge">Featured</div>
                 </div>
-                <p class="raga-description">
-                    Raga Yaman is one of the most fundamental ragas in Hindustani classical music. 
-                    Known for its serene and devotional character, it creates an atmosphere of peace and spiritual elevation.
-                </p>
-                <a href="{{ site.baseurl }}/ragas/yaman/" class="btn btn-outline">Explore Raga Yaman</a>
-            </div>
-            <div class="raga-notation">
-                <div class="swar-sequence">
-                    <span class="swar">सा</span>
-                    <span class="swar">रे</span>
-                    <span class="swar">ग</span>
-                    <span class="swar">म॑</span>
-                    <span class="swar">प</span>
-                    <span class="swar">ध</span>
-                    <span class="swar">नि</span>
-                    <span class="swar">सां</span>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="date"><i class="fas fa-calendar"></i> Oct 15, 2025</span>
+                        <span class="category">Performance</span>
+                    </div>
+                    <h3>Stunning Performance at Vienna Opera House</h3>
+                    <p>
+                        Last weekend's performance at the prestigious Vienna Opera House was a magical evening 
+                        showcasing contemporary classical repertoire to an international audience.
+                    </p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
+            
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="{{ site.baseurl }}/assets/images/news/recording-session.svg" alt="Recording Session" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-landscape.jpg'">
+                    <div class="news-badge">Studio</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="date"><i class="fas fa-calendar"></i> Oct 10, 2025</span>
+                        <span class="category">Recording</span>
+                    </div>
+                    <h3>New Album in Production</h3>
+                    <p>
+                        Currently working on an exciting new album featuring contemporary arrangements 
+                        and original compositions spanning multiple languages and genres.
+                    </p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="{{ site.baseurl }}/assets/images/news/music-workshop.svg" alt="Music Workshop" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-landscape.jpg'">
+                    <div class="news-badge">Education</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="date"><i class="fas fa-calendar"></i> Oct 5, 2025</span>
+                        <span class="category">Workshop</span>
+                    </div>
+                    <h3>Masterclass Series Launch</h3>
+                    <p>
+                        Launching a new series of vocal masterclasses focusing on performance technique, 
+                        stage presence, and connecting with audiences across different musical styles.
+                    </p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-footer">
+            <a href="{{ site.baseurl }}/news/" class="btn btn-primary">View All News</a>
         </div>
     </div>
 </section>
@@ -94,79 +128,79 @@ layout: default
 <section class="recent-performances">
     <div class="container">
         <div class="section-header">
-            <h2><i class="fas fa-music"></i> Recent Performances</h2>
+            <h2><i class="fas fa-star"></i> Featured Performances</h2>
             <p>Highlights from recent concerts and recordings</p>
         </div>
         
         <div class="performances-grid">
             <div class="performance-card">
                 <div class="performance-image">
-                    <img src="{{ site.baseurl }}/assets/images/news/featured-performance.svg" alt="Recent Performance">
+                    <img src="{{ site.baseurl }}/assets/images/news/featured-performance.svg" alt="Recent Performance" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-landscape.jpg'">
                     <div class="play-overlay">
                         <i class="fas fa-play"></i>
                     </div>
                 </div>
                 <div class="performance-info">
-                    <h3>Classical Evening at Sangeet Sabha</h3>
+                    <h3>Contemporary Classical Evening</h3>
                     <p class="performance-details">
-                        <span class="venue"><i class="fas fa-map-marker-alt"></i> Mumbai</span>
+                        <span class="venue"><i class="fas fa-map-marker-alt"></i> London Royal Opera House</span>
                         <span class="date"><i class="fas fa-calendar"></i> Oct 15, 2025</span>
                     </p>
                     <p class="performance-description">
-                        An enchanting evening featuring Raga Bhairav and Raga Darbari, 
-                        showcasing the depth of Gwalior Gharana tradition.
+                        An enchanting evening featuring contemporary classical pieces and modern arrangements, 
+                        showcasing the evolution of vocal performance in the 21st century.
                     </p>
-                    <div class="ragas-performed">
-                        <span class="raga-tag">Raga Bhairav</span>
-                        <span class="raga-tag">Raga Darbari</span>
+                    <div class="performance-tags">
+                        <span class="tag">Contemporary</span>
+                        <span class="tag">Classical</span>
                     </div>
                 </div>
             </div>
             
             <div class="performance-card">
                 <div class="performance-image">
-                    <img src="{{ site.baseurl }}/assets/images/news/recording-session.svg" alt="Recording Session">
+                    <img src="{{ site.baseurl }}/assets/images/news/recording-session.svg" alt="Recording Session" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-landscape.jpg'">
                     <div class="play-overlay">
                         <i class="fas fa-microphone"></i>
                     </div>
                 </div>
                 <div class="performance-info">
-                    <h3>Studio Recording - Devotional Album</h3>
+                    <h3>Studio Album Recording</h3>
                     <p class="performance-details">
-                        <span class="venue"><i class="fas fa-microphone"></i> Studio Session</span>
+                        <span class="venue"><i class="fas fa-microphone"></i> Abbey Road Studios</span>
                         <span class="date"><i class="fas fa-calendar"></i> Oct 10, 2025</span>
                     </p>
                     <p class="performance-description">
-                        Recording sessions for upcoming devotional album featuring classical 
-                        compositions in praise of Saraswati Mata.
+                        Recording sessions for upcoming album featuring original compositions 
+                        and contemporary arrangements in multiple languages.
                     </p>
-                    <div class="ragas-performed">
-                        <span class="raga-tag">Raga Saraswati</span>
-                        <span class="raga-tag">Raga Bageshri</span>
+                    <div class="performance-tags">
+                        <span class="tag">Recording</span>
+                        <span class="tag">Original</span>
                     </div>
                 </div>
             </div>
             
             <div class="performance-card">
                 <div class="performance-image">
-                    <img src="{{ site.baseurl }}/assets/images/news/music-workshop.svg" alt="Music Workshop">
+                    <img src="{{ site.baseurl }}/assets/images/news/music-workshop.svg" alt="Music Workshop" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-landscape.jpg'">
                     <div class="play-overlay">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                 </div>
                 <div class="performance-info">
-                    <h3>Classical Music Workshop</h3>
+                    <h3>Professional Vocal Masterclass</h3>
                     <p class="performance-details">
-                        <span class="venue"><i class="fas fa-university"></i> Music Academy</span>
+                        <span class="venue"><i class="fas fa-university"></i> Berklee College of Music</span>
                         <span class="date"><i class="fas fa-calendar"></i> Oct 5, 2025</span>
                     </p>
                     <p class="performance-description">
-                        Teaching session on fundamentals of raga elaboration and 
-                        traditional composition structures in classical music.
+                        Teaching session on advanced vocal techniques and performance artistry 
+                        for professional and aspiring vocalists.
                     </p>
-                    <div class="ragas-performed">
-                        <span class="raga-tag">Raga Theory</span>
-                        <span class="raga-tag">Taal System</span>
+                    <div class="performance-tags">
+                        <span class="tag">Education</span>
+                        <span class="tag">Masterclass</span>
                     </div>
                 </div>
             </div>
@@ -183,7 +217,7 @@ layout: default
     <div class="container">
         <div class="section-header">
             <h2><i class="fas fa-calendar-alt"></i> Upcoming Concerts</h2>
-            <p>Join us for upcoming classical music events</p>
+            <p>Join us for upcoming professional performances and events</p>
         </div>
         
         <div class="concerts-timeline">
@@ -194,14 +228,14 @@ layout: default
                     <span class="year">2025</span>
                 </div>
                 <div class="concert-info">
-                    <h3>Raag Malhar Concert</h3>
-                    <p class="venue"><i class="fas fa-map-marker-alt"></i> Tata Theatre, Mumbai</p>
-                    <p class="description">Monsoon ragas celebration featuring Raag Miyan Malhar and Raag Gaud Malhar</p>
+                    <h3>Contemporary Voices Concert</h3>
+                    <p class="venue"><i class="fas fa-map-marker-alt"></i> Carnegie Hall, New York</p>
+                    <p class="description">Contemporary vocal performance featuring modern compositions and innovative arrangements</p>
                     <div class="concert-details">
-                        <span class="time"><i class="fas fa-clock"></i> 7:00 PM</span>
-                        <span class="price"><i class="fas fa-ticket-alt"></i> ₹500 - ₹2000</span>
+                        <span class="time"><i class="fas fa-clock"></i> 8:00 PM</span>
+                        <span class="price"><i class="fas fa-ticket-alt"></i> $50 - $200</span>
                     </div>
-                    <a href="{{ site.baseurl }}/concerts/raag-malhar-2025/" class="btn btn-small">Book Tickets</a>
+                    <a href="{{ site.baseurl }}/concerts/contemporary-voices-2025/" class="btn btn-small">Book Tickets</a>
                 </div>
             </div>
             
@@ -212,14 +246,14 @@ layout: default
                     <span class="year">2025</span>
                 </div>
                 <div class="concert-info">
-                    <h3>Classical Fusion Evening</h3>
-                    <p class="venue"><i class="fas fa-map-marker-alt"></i> Nehru Centre, Worli</p>
-                    <p class="description">Innovative fusion of classical ragas with contemporary arrangements</p>
+                    <h3>World Music Fusion Evening</h3>
+                    <p class="venue"><i class="fas fa-map-marker-alt"></i> Sydney Opera House</p>
+                    <p class="description">Innovative fusion of global musical traditions with contemporary vocal artistry</p>
                     <div class="concert-details">
-                        <span class="time"><i class="fas fa-clock"></i> 6:30 PM</span>
-                        <span class="price"><i class="fas fa-ticket-alt"></i> ₹800 - ₹3000</span>
+                        <span class="time"><i class="fas fa-clock"></i> 7:30 PM</span>
+                        <span class="price"><i class="fas fa-ticket-alt"></i> AUD $80 - $300</span>
                     </div>
-                    <a href="{{ site.baseurl }}/concerts/fusion-evening-2025/" class="btn btn-small">Book Tickets</a>
+                    <a href="{{ site.baseurl }}/concerts/world-fusion-2025/" class="btn btn-small">Book Tickets</a>
                 </div>
             </div>
         </div>
@@ -230,51 +264,48 @@ layout: default
     </div>
 </section>
 
-<!-- Musical Philosophy -->
-<section class="musical-philosophy">
+<!-- Professional Philosophy -->
+<section class="professional-philosophy">
     <div class="container">
         <div class="philosophy-content">
             <div class="philosophy-text">
-                <h2>संगीत दर्शन</h2>
-                <h3>Musical Philosophy</h3>
-                <blockquote class="sanskrit-quote">
-                    "सुरं वर्णं तु रागो रूपकं तालः क्रिया।<br>
-                    गीतं वाद्यं तथा नृत्यं तुर्यं भरत लक्षणम्॥"
+                <h2>Artistic Vision</h2>
+                <h3>Professional Philosophy</h3>
+                <blockquote class="quote">
+                    "Music transcends boundaries, connecting hearts and minds across cultures and generations. 
+                    Through professional excellence and emotional authenticity, every performance becomes a bridge 
+                    between artist and audience."
                 </blockquote>
-                <p class="quote-translation">
-                    "Melody, color, raga, form, rhythm, action - 
-                    Song, instruments, and dance are the characteristics of music according to Bharata."
-                </p>
                 
                 <p class="philosophy-description">
-                    Music is not just performance; it is spiritual practice, emotional expression, and cultural preservation. 
-                    Through the eternal tradition of Bharatiya Shastriya Sangeet, we connect with the divine consciousness 
-                    that flows through every raga, every taal, every note.
+                    As a professional singer, my commitment is to deliver exceptional performances that honor 
+                    both tradition and innovation. Every concert, recording, and collaboration represents 
+                    an opportunity to touch lives through the universal language of music.
                 </p>
                 
                 <div class="core-values">
                     <div class="value">
                         <i class="fas fa-heart"></i>
-                        <h4>भाव (Bhava)</h4>
-                        <p>Emotional expression through music</p>
+                        <h4>Passion</h4>
+                        <p>Emotional authenticity in every performance</p>
                     </div>
                     <div class="value">
                         <i class="fas fa-star"></i>
-                        <h4>साधना (Sadhana)</h4>
-                        <p>Dedicated practice and devotion</p>
+                        <h4>Excellence</h4>
+                        <p>Commitment to professional mastery</p>
                     </div>
                     <div class="value">
-                        <i class="fas fa-infinity"></i>
-                        <h4>परंपरा (Parampara)</h4>
-                        <p>Honoring traditional heritage</p>
+                        <i class="fas fa-globe"></i>
+                        <h4>Connection</h4>
+                        <p>Building bridges through music</p>
                     </div>
                 </div>
             </div>
             
             <div class="philosophy-image">
-                <img src="{{ site.baseurl }}/assets/images/udita-philosophy.svg" alt="Musical Philosophy">
+                <img src="{{ site.baseurl }}/assets/images/udita-philosophy.svg" alt="Musical Philosophy" onerror="this.src='{{ site.baseurl }}/assets/images/placeholder-portrait.jpg'">
                 <div class="image-caption">
-                    <p>"Where tradition meets expression, music becomes meditation"</p>
+                    <p>"Where passion meets professionalism, music becomes transformation"</p>
                 </div>
             </div>
         </div>

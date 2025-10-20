@@ -5,6 +5,7 @@ title: "Udita Ranade - Professional Singer & Performer"
 description: "Professional Singer & Performer captivating audiences worldwide with powerful vocals and emotive performances across multiple genres and languages."
 url: "https://uditaranade.com"
 baseurl: ""
+enforce_ssl: "uditaranade.com"
 
 # Author information
 author:
