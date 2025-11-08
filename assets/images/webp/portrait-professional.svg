@@ -1,0 +1,52 @@
+<svg width="600" height="800" viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="portraitGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#263238;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#37474f;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="light" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#portraitGrad)"/>
+  <rect width="600" height="800" fill="url(#light)"/>
+  
+  <!-- Silhouette Figure -->
+  <ellipse cx="300" cy="350" rx="120" ry="150" fill="#1a1a2e" opacity="0.3"/>
+  
+  <!-- Head -->
+  <circle cx="300" cy="280" r="80" fill="#4a4a4a"/>
+  
+  <!-- Shoulders/Body -->
+  <ellipse cx="300" cy="400" rx="150" ry="100" fill="#3a3a3a"/>
+  
+  <!-- Microphone in hand -->
+  <ellipse cx="350" cy="420" rx="15" ry="25" fill="#d4af37"/>
+  <line x1="365" y1="420" x2="385" y2="440" stroke="#c0c0c0" stroke-width="3"/>
+  
+  <!-- Musical Notes floating -->
+  <g fill="#d4af37" opacity="0.5">
+    <circle cx="150" cy="200" r="12"/>
+    <rect x="162" y="160" width="3" height="40"/>
+    <circle cx="164" cy="160" r="7"/>
+    
+    <circle cx="450" cy="250" r="12"/>
+    <rect x="462" y="210" width="3" height="40"/>
+    <circle cx="464" cy="210" r="7"/>
+    
+    <circle cx="480" cy="400" r="10"/>
+    <rect x="490" y="365" width="2" height="35"/>
+  </g>
+  
+  <!-- Spotlight from top -->
+  <polygon points="200,0 250,300 200,300" fill="#ffeb3b" opacity="0.08"/>
+  <polygon points="400,0 350,300 400,300" fill="#ffeb3b" opacity="0.08"/>
+  
+  <!-- Text at bottom -->
+  <text x="300" y="750" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle">Udita Ranade</text>
+  <text x="300" y="780" font-family="Arial, sans-serif" font-size="18" fill="#d4af37" text-anchor="middle">Professional Singer</text>
+</svg>

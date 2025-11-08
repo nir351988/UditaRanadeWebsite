@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="performanceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fd79a8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fdcb6e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e17055;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="spotlightGrad" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#performanceGrad)"/>
+  
+  <!-- Spotlight -->
+  <ellipse cx="300" cy="120" rx="200" ry="120" fill="url(#spotlightGrad)"/>
+  
+  <!-- Stage elements -->
+  <rect x="0" y="350" width="600" height="50" fill="#2d3436" opacity="0.8"/>
+  
+  <!-- Performer silhouette -->
+  <ellipse cx="300" cy="240" rx="40" ry="60" fill="#2d3436" opacity="0.8"/>
+  <ellipse cx="300" cy="210" rx="30" ry="25" fill="#2d3436" opacity="0.8"/>
+  <ellipse cx="300" cy="300" rx="60" ry="40" fill="#2d3436" opacity="0.7"/>
+  
+  <!-- Musical waves -->
+  <g stroke="#ffffff" stroke-width="2" fill="none" opacity="0.3">
+    <path d="M 100 200 Q 150 180 200 200 T 300 200"/>
+    <path d="M 300 200 Q 350 180 400 200 T 500 200"/>
+    <path d="M 150 250 Q 200 230 250 250 T 350 250"/>
+    <path d="M 250 250 Q 300 230 350 250 T 450 250"/>
+  </g>
+  
+  <!-- Musical notes floating -->
+  <g fill="#ffffff" opacity="0.4">
+    <text x="150" y="150" font-family="serif" font-size="20">♪</text>
+    <text x="450" y="180" font-family="serif" font-size="25">♫</text>
+    <text x="200" y="320" font-family="serif" font-size="18">♪</text>
+    <text x="400" y="300" font-family="serif" font-size="22">♪</text>
+    <text x="500" y="160" font-family="serif" font-size="16">♫</text>
+  </g>
+  
+  <!-- Text -->
+  <text x="300" y="380" font-family="serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">Performing with Passion</text>
+</svg>
