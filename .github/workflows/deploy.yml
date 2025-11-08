@@ -1,4 +1,4 @@
-name: Jekyll Build & Deploy to Netlify
+name: Jekyll Build, Test & Deploy
 
 on:
   push:
@@ -16,13 +16,19 @@ jobs:
       - name: Setup Ruby and Jekyll
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0' # Or your preferred Ruby version
-          bundler-cache: true # Runs 'bundle install' and caches gems
+          ruby-version: '3.0'
+          bundler-cache: true
+
+      - name: Install HTMLProofer
+        run: gem install html-proofer
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+
+      - name: Test with HTMLProofer
+        run: bundle exec htmlproofer ./_site --disable-external
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
