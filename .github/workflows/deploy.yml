@@ -1,4 +1,4 @@
-name: Jekyll Build, Test & Deploy
+name: Jekyll Build, Test, Analyze & Deploy
 
 on:
   push:
@@ -23,14 +23,65 @@ jobs:
         run: gem install html-proofer
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
+        run: bundle exec jekyll build 2>&1 | tee build.log
 
       - name: Test with HTMLProofer
-        run: bundle exec htmlproofer ./_site --disable-external
+        id: htmlproofer
+        run: bundle exec htmlproofer ./_site --disable-external 2>&1 | tee test.log
+        continue-on-error: true
+
+      - name: Analyze Logs and Create Summary
+        id: analysis
+        run: |
+          echo "## CI/CD Analysis Report" > ci_summary.md
+          echo "**Run ID:** ${{ github.run_id }}" >> ci_summary.md
+          echo "**Date:** $(date)" >> ci_summary.md
+          echo "" >> ci_summary.md
+
+          if [[ ${{ steps.htmlproofer.outcome }} == 'success' ]]; then
+            echo "### ✅ Overall Status: Success" >> ci_summary.md
+            echo "All steps passed successfully." >> ci_summary.md
+          else
+            echo "### ❌ Overall Status: Failure" >> ci_summary.md
+            echo "One or more steps failed. See details below." >> ci_summary.md
+          fi
+
+          echo "" >> ci_summary.md
+          echo "---" >> ci_summary.md
+          echo "### Build Log Summary" >> ci_summary.md
+          echo '```' >> ci_summary.md
+          tail -n 20 build.log >> ci_summary.md
+          echo '```' >> ci_summary.md
+
+          echo "" >> ci_summary.md
+          echo "### Test Log Summary (HTMLProofer)" >> ci_summary.md
+          if [[ ${{ steps.htmlproofer.outcome }} == 'success' ]]; then
+            echo "✅ HTMLProofer found no issues." >> ci_summary.md
+          else
+            echo "❌ HTMLProofer found issues:" >> ci_summary.md
+            echo '```' >> ci_summary.md
+            cat test.log >> ci_summary.md
+            echo '```' >> ci_summary.md
+          fi
+        
+      - name: Upload Analysis Artifacts
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: analysis-report
+          path: |
+            ci_summary.md
+            build.log
+            test.log
+
+      - name: Check for Test Failures
+        if: steps.htmlproofer.outcome == 'failure'
+        run: |
+          echo "HTMLProofer tests failed. Halting deployment."
+          exit 1
 
       - name: Deploy to Netlify
+        if: success()
         uses: nwtgck/actions-netlify@v2
         with:
           publish-dir: './_site'
